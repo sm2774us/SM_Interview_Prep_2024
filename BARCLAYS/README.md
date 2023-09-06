@@ -1,0 +1,849 @@
+# Interview Prep 2024
+
+## Table Of Contents <a name="top"></a>
+
+1. [BARCLAYS](#barclays)  
+ - 1.1   [BinaryGap](#binary-gap)
+ - 1.2   [Limit Order](#limit-order)
+ - 1.3   [Stop Order](#stop-order)
+ - 1.4   [Cancellation of Limit or Stop Orders](#cancellation-of-limit-or-stop-orders)
+
+#### [Binary Gap](./src/main/java/com/codility/lessons/BinaryGap)
+
+- [**Binary Gap:**](./src/main/java/com/codility/lessons/BinaryGap/BinaryGap.java)
+Find longest sequence of zeros in binary representation of an integer.
+
+A binary gap within a positive integer N is any maximal sequence of
+consecutive zeros that is surrounded by ones at both ends in the binary
+representation of N.
+
+For example, number 9 has binary representation 1001 and contains a
+binary gap of length 2. The number 529 has binary representation
+1000010001 and contains two binary gaps: one of length 4 and one of
+length 3. The number 20 has binary representation 10100 and contains one
+binary gap of length 1. The number 15 has binary representation 1111 and
+has no binary gaps.
+
+``` java
+Write a function:
+
+class Solution { public int solution(int N); }
+```
+
+that, given a positive integer N, returns the length of its longest
+binary gap. The function should return 0 if N doesn’t contain a binary
+gap.
+
+For example, given N = 1041 the function should return 5, because N has
+binary representation 10000010001 and so its longest binary gap is of
+length 5.
+
+Assume that  
+N is an integer within the range \[1..2,147,483,647\].
+
+Complexity: expected worst-case time complexity is O(log(N)); expected
+worst-case space complexity is O(1).
+
+```java
+// Bit-Wise Solution
+
+class BinaryGap
+{
+    public static int solution(int n) { 
+		    // get rid of right-hand zeros
+	      while (n != 0 && (n & 1) == 0) {
+	    	    System.out.println("n--->"+n);
+	    	    System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+	            n >>>= 1;
+	      }
+        System.out.println("Got rid of all the right-hand zeros");
+        System.out.println("n--->"+n);
+        System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+	    
+        int max = 0;
+        int gap = 0;
+        while (n != 0) {
+	          System.out.println("n--->"+n);
+	          System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+	          System.out.println("n&1--->"+(n&1));
+	          if ((n & 1) == 0) {
+	              System.out.println("n--->"+n);
+	              System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+	              gap++;
+	              max = Math.max(gap, max);
+	          } else {
+	              gap = 0;
+	          }
+	          n >>>= 1;
+        }
+        return max;
+    }
+
+    public static void main (String[] args) throws java.lang.Exception {
+		    //int n = 1041;
+		    int n = 1040;
+		    System.out.println("n--->"+n);
+		    System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+		    int sol = solution(n);
+		    System.out.println("max gap--->"+sol);
+    }
+}
+```
+
+```bash
+# Output
+
+n--->1040
+n in Binary--->10000010000
+n--->1040
+n in Binary--->10000010000
+n--->520
+n in Binary--->1000001000
+n--->260
+n in Binary--->100000100
+n--->130
+n in Binary--->10000010
+Got rid of all the right-hand zeros
+n--->65
+n in Binary--->1000001
+n--->65
+n in Binary--->1000001
+n&1--->1
+n--->32
+n in Binary--->100000
+n&1--->0
+n--->32
+n in Binary--->100000
+n--->16
+n in Binary--->10000
+n&1--->0
+n--->16
+n in Binary--->10000
+n--->8
+n in Binary--->1000
+n&1--->0
+n--->8
+n in Binary--->1000
+n--->4
+n in Binary--->100
+n&1--->0
+n--->4
+n in Binary--->100
+n--->2
+n in Binary--->10
+n&1--->0
+n--->2
+n in Binary--->10
+n--->1
+n in Binary--->1
+n&1--->1
+max gap--->5
+```
+
+```java
+class BinaryGap {
+    public static int solution(int n) {
+		    System.out.println("n--->"+n);
+		    System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+
+        int maxGap = 0, currGap = 0;
+        boolean isInGap = false;
+        
+        while(n > 0) {
+		        System.out.println("n--->"+n);
+		        System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+            if(isOne(n)) {
+		            System.out.println("n--->"+n);
+		            System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+                maxGap = maxGap < currGap ? currGap : maxGap;
+                currGap = 0;
+                isInGap = true;
+            } else if(isInGap){ currGap++; }
+            n /= 2;
+        }
+        
+        return maxGap;
+    }
+    
+    private static boolean isOne(int n) {
+        return N%2 == 1 || N == 1 ;
+    }
+
+    public static void main (String[] args) throws java.lang.Exception {
+		    //int n = 1041;
+		    int n = 1040;
+		    System.out.println("n--->"+n);
+		    System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+		    int sol = solution(n);
+		    System.out.println("max gap--->"+sol);
+    }
+}
+```
+
+```bash
+# Output
+
+n--->1040
+n in Binary--->10000010000
+n--->1040
+n in Binary--->10000010000
+n--->1040
+n in Binary--->10000010000
+n--->520
+n in Binary--->1000001000
+n--->260
+n in Binary--->100000100
+n--->130
+n in Binary--->10000010
+n--->65
+n in Binary--->1000001
+n--->65
+n in Binary--->1000001
+n--->32
+n in Binary--->100000
+n--->16
+n in Binary--->10000
+n--->8
+n in Binary--->1000
+n--->4
+n in Binary--->100
+n--->2
+n in Binary--->10
+n--->1
+n in Binary--->1
+n--->1
+n in Binary--->1
+max gap--->5
+```
+
+# [Arrays](./src/com/codility/lessons/Arrays)
+
+- [**Odd Occurrences In
+  Array:**](./src/main/java/com/codility/lessons/Arrays/OddOccurrencesInArray.java)
+  Find value that occurs in odd number of elements.
+
+A non-empty zero-indexed array A consisting of N integers is given. The
+array contains an odd number of elements, and each element of the array
+can be paired with another element that has the same value, except for
+one element that is left unpaired.
+
+For example, in array A such that:
+
+``` java
+  A[0] = 9  A[1] = 3  A[2] = 9
+  A[3] = 3  A[4] = 9  A[5] = 7
+  A[6] = 9
+```
+
+the elements at indexes 0 and 2 have value 9, the elements at indexes 1
+and 3 have value 3, the elements at indexes 4 and 6 have value 9, the
+element at index 5 has value 7 and is unpaired. Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array A consisting of N integers fulfilling the above
+conditions, returns the value of the unpaired element.
+
+For example, given array A such that:
+
+``` java
+  A[0] = 9  A[1] = 3  A[2] = 9
+  A[3] = 3  A[4] = 9  A[5] = 7
+  A[6] = 9
+```
+
+the function should return 7, as explained in the example above.
+
+Assume that  
+N is an odd integer within the range \[1..1,000,000\]; each element of
+array A is an integer within the range \[1..1,000,000,000\]; all but one
+of the values in A occur an even number of times. Complexity:
+
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(1), beyond input storage (not counting the storage
+required for input arguments).
+
+- [**Cyclic
+  Rotation:**](./src/main/java/com/codility/lessons/Arrays/CyclicRotation.java)
+  Rotate an array to the right by a given number of steps. A
+  zero-indexed array A consisting of N integers is given. Rotation of
+  the array means that each element is shifted right by one index, and
+  the last element of the array is moved to the first place. For
+  example, the rotation of array A = \[3, 8, 9, 7, 6\] is \[6, 3, 8, 9,
+  7\] (elements are shifted right by one index and 6 is moved to the
+  first place).
+
+The goal is to rotate array A K times; that is, each element of A will
+be shifted to the right K times.
+
+Write a function:
+
+``` java
+class Solution { public int[] solution(int[] A, int K); }
+```
+
+that, given a zero-indexed array A consisting of N integers and an
+integer K, returns the array A rotated K times.
+
+For example, given
+
+``` java
+    A = [3, 8, 9, 7, 6]
+    K = 3
+```
+
+the function should return \[9, 7, 6, 3, 8\]. Three rotations were made:
+
+``` java
+    [3, 8, 9, 7, 6] -> [6, 3, 8, 9, 7]
+    [6, 3, 8, 9, 7] -> [7, 6, 3, 8, 9]
+    [7, 6, 3, 8, 9] -> [9, 7, 6, 3, 8]
+```
+
+``` java
+For another example, given
+    A = [0, 0, 0]
+    K = 1
+the function should return [0, 0, 0]
+```
+
+Given:
+
+``` java
+    A = [1, 2, 3, 4]
+    K = 4
+the function should return [1, 2, 3, 4]
+```
+
+Assume that  
+N and K are integers within the range \[0..100\]; each element of array
+A is an integer within the range \[−1,000..1,000\]. In your solution,
+focus on correctness. The performance of your solution will not be the
+focus of the assessment.
+
+# [Solutions to Lesson 3: Time Complexity](./src/com/codility/lessons/TimeComplexity)
+
+- [**Frog
+  Jump:**](./src/main/java/com/codility/lessons/TimeComplexity/FrogJmp.java)
+  Count minimal number of jumps from position X to Y. A small frog wants
+  to get to the other side of the road. The frog is currently located at
+  position X and wants to get to a position greater than or equal to Y.
+  The small frog always jumps a fixed distance, D.
+
+Count the minimal number of jumps that the small frog must perform to
+reach its target.
+
+Write a function:
+
+``` java
+class Solution { public int solution(int X, int Y, int D); }
+```
+
+that, given three integers X, Y and D, returns the minimal number of
+jumps from position X to a position equal to or greater than Y.
+
+For example, given:
+
+``` java
+  X = 10
+  Y = 85
+  D = 30
+```
+
+the function should return 3, because the frog will be positioned as
+follows:
+
+after the first jump, at position 10 + 30 = 40 after the second jump, at
+position 10 + 30 + 30 = 70 after the third jump, at position 10 + 30 +
+30 + 30 = 100 Assume that::
+
+X, Y and D are integers within the range \[1..1,000,000,000\]; X ≤ Y.
+
+Complexity:
+
+expected worst-case time complexity is O(1); expected worst-case space
+complexity is O(1).
+
+- [**Perm Missing
+  Element:**](./src/main/java/com/codility/lessons/TimeComplexity/PermMissingElem.java)
+  Find the missing element in a given permutation. A zero-indexed array
+  A consisting of N different integers is given. The array contains
+  integers in the range \[1..(N + 1)\], which means that exactly one
+  element is missing.
+
+Your goal is to find that missing element.
+
+Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a zero-indexed array A, returns the value of the missing
+element.
+
+For example, given array A such that:
+
+``` java
+  A[0] = 2
+  A[1] = 3
+  A[2] = 1
+  A[3] = 5
+```
+
+the function should return 4, as it is the missing element.
+
+Assume that  
+N is an integer within the range \[0..100,000\]; the elements of A are
+all distinct; each element of array A is an integer within the range
+\[1..(N + 1)\]. Complexity:
+
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(1), beyond input storage (not counting the storage
+required for input arguments).
+
+- [**Tape
+  Equilibrium:**](./src/main/java/com/codility/lessons/TimeComplexity/TapeEquilibrium.java)
+  Minimize the value \|(A\[0\] + … + A\[P-1\]) - (A\[P\] + … +
+  A\[N-1\])\|.
+
+A non-empty zero-indexed array A consisting of N integers is given.
+Array A represents numbers on a tape.
+
+Any integer P, such that 0 \< P \< N, splits this tape into two
+non-empty parts: A\[0\], A\[1\], …, A\[P − 1\] and A\[P\], A\[P + 1\],
+…, A\[N − 1\].
+
+The difference between the two parts is the value of: \|(A\[0\] +
+A\[1\] + … + A\[P − 1\]) − (A\[P\] + A\[P + 1\] + … + A\[N − 1\])\|
+
+In other words, it is the absolute difference between the sum of the
+first part and the sum of the second part.
+
+For example, consider array A such that:
+
+``` java
+  A[0] = 3
+  A[1] = 1
+  A[2] = 2
+  A[3] = 4
+  A[4] = 3
+```
+
+We can split this tape in four places:
+
+``` java
+P = 1, difference = |3 − 10| = 7
+P = 2, difference = |4 − 9| = 5
+P = 3, difference = |6 − 7| = 1
+P = 4, difference = |10 − 3| = 7
+```
+
+Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty zero-indexed array A of N integers, returns the
+minimal difference that can be achieved.
+
+For example, given:
+
+``` java
+  A[0] = 3
+  A[1] = 1
+  A[2] = 2
+  A[3] = 4
+  A[4] = 3
+```
+
+the function should return 1, as explained above.
+
+Assume that  
+N is an integer within the range \[2..100,000\]; each element of array A
+is an integer within the range \[−1,000..1,000\]. Complexity:
+
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(N), beyond input storage (not counting the storage
+required for input arguments).
+
+# [Solutions to Lesson 4: Counting Elements](./src/com/codility/lessons/CountingElements)
+
+- [**Permutation
+  Check:**](./src/main/java/com/codility/lessons/CountingElements/PermutationCheck.java)
+  Check whether array A is a permutation.
+
+A non-empty zero-indexed array A consisting of N integers is given.
+
+A permutation is a sequence containing each element from 1 to N once,
+and only once.
+
+For example, array A such that:
+
+``` java
+    A[0] = 4
+    A[1] = 1
+    A[2] = 3
+    A[3] = 2
+```
+
+is a permutation, but array A such that:
+
+``` java
+    A[0] = 4
+    A[1] = 1
+    A[2] = 3
+```
+
+is not a permutation, because value 2 is missing.
+
+The goal is to check whether array A is a permutation.
+
+Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a zero-indexed array A, returns 1 if array A is a
+permutation and 0 if it is not.
+
+For example, given array A such that:
+
+``` java
+    A[0] = 4
+    A[1] = 1
+    A[2] = 3
+    A[3] = 2
+```
+
+the function should return 1.
+
+Given array A such that:
+
+``` java
+    A[0] = 4
+    A[1] = 1
+    A[2] = 3
+```
+
+the function should return 0.
+
+Assume that  
+N is an integer within the range \[1..100,000\]; each element of array A
+is an integer within the range \[1..1,000,000,000\]. Complexity:
+
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(N), beyond input storage (not counting the storage
+required for input arguments).
+
+# [Solutions to Lesson 6: Sorting](./src/main/java/com/codility/lessons/Sorting)
+
+- [**Distinct:**](./src/main/java/com/codility/lessons/Sorting/Distinct.java)
+  Compute number of distinct values in an array.
+
+Write a function
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a zero-indexed array A consisting of N integers, returns the
+number of distinct values in array A.
+
+Assume that  
+N is an integer within the range \[0..100,000\]; each element of array A
+is an integer within the range \[−1,000,000..1,000,000\]. For example,
+given array A consisting of six elements such that:
+
+``` java
+ A[0] = 2    A[1] = 1    A[2] = 1
+ A[3] = 2    A[4] = 3    A[5] = 1
+```
+
+the function should return 3, because there are 3 distinct values
+appearing in array A, namely 1, 2 and 3.
+
+Complexity:
+
+expected worst-case time complexity is O(N\*log(N)); expected worst-case
+space complexity is O(N), beyond input storage (not counting the storage
+required for input arguments).
+
+- [**Triangle:**](./src/main/java/com/codility/lessons/Sorting/Triangle.java)
+  Determine whether a triangle can be built from a given set of edges.
+
+A zero-indexed array A consisting of N integers is given. A triplet (P,
+Q, R) is triangular if 0 ≤ P \< Q \< R \< N and:
+
+``` java
+A[P] + A[Q] > A[R],
+A[Q] + A[R] > A[P],
+A[R] + A[P] > A[Q].
+```
+
+For example, consider array A such that:
+
+``` java
+  A[0] = 10    A[1] = 2    A[2] = 5
+  A[3] = 1     A[4] = 8    A[5] = 20
+```
+
+Triplet (0, 2, 4) is triangular.
+
+Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a zero-indexed array A consisting of N integers, returns 1
+if there exists a triangular triplet for this array and returns 0
+otherwise.
+
+For example, given array A such that:
+
+``` java
+  A[0] = 10    A[1] = 2    A[2] = 5
+  A[3] = 1     A[4] = 8    A[5] = 20
+```
+
+the function should return 1, as explained above. Given array A such
+that:
+
+``` java
+  A[0] = 10    A[1] = 50    A[2] = 5
+  A[3] = 1
+```
+
+the function should return 0.
+
+Assume that  
+N is an integer within the range \[0..100,000\]; each element of array A
+is an integer within the range \[−2,147,483,648..2,147,483,647\].
+Complexity:
+
+expected worst-case time complexity is O(N\*log(N)); expected worst-case
+space complexity is O(N), beyond input storage (not counting the storage
+required for input arguments).
+
+- [**MaxProductOfThree:**](./src/main/java/com/codility/lessons/Sorting/MaxProductOfThree.java)
+  Maximize A\[P\] \* A\[Q\] \* A\[R\] for any triplet (P, Q, R).
+
+A non-empty zero-indexed array A consisting of N integers is given. The
+product of triplet (P, Q, R) equates to A\[P\] \* A\[Q\] \* A\[R\] (0 ≤
+P \< Q \< R \< N).
+
+For example, array A such that:
+
+``` java
+  A[0] = -3
+  A[1] = 1
+  A[2] = 2
+  A[3] = -2
+  A[4] = 5
+  A[5] = 6
+```
+
+contains the following example triplets:
+
+``` java
+(0, 1, 2), product is −3 * 1 * 2 = −6
+(1, 2, 4), product is 1 * 2 * 5 = 10
+(2, 4, 5), product is 2 * 5 * 6 = 60
+```
+
+Your goal is to find the maximal product of any triplet.
+
+Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty zero-indexed array A, returns the value of the
+maximal product of any triplet.
+
+For example, given array A such that:
+
+``` java
+  A[0] = -3
+  A[1] = 1
+  A[2] = 2
+  A[3] = -2
+  A[4] = 5
+  A[5] = 6
+```
+
+the function should return 60, as the product of triplet (2, 4, 5) is
+maximal.
+
+Assume that  
+N is an integer within the range \[3..100,000\]; each element of array A
+is an integer within the range \[−1,000..1,000\]. Complexity:
+
+expected worst-case time complexity is O(N\*log(N)); expected worst-case
+space complexity is O(1), beyond input storage (not counting the storage
+required for input arguments).
+
+- [**Number Of Disc
+  Intersections:**](./src/main/java/com/codility/lessons/Sorting/NumberOfDiscIntersections.java)
+  Compute the number of intersections in a sequence of discs.
+
+We draw N discs on a plane. The discs are numbered from 0 to N − 1. A
+zero-indexed array A of N non-negative integers, specifying the radiuses
+of the discs, is given. The J-th disc is drawn with its center at (J, 0)
+and radius A\[J\].
+
+We say that the J-th disc and K-th disc intersect if J ≠ K and the J-th
+and K-th discs have at least one common point (assuming that the discs
+contain their borders).
+
+The figure below shows discs drawn for N = 6 and A as follows:
+
+``` java
+  A[0] = 1
+  A[1] = 5
+  A[2] = 2
+  A[3] = 1
+  A[4] = 4
+  A[5] = 0
+```
+
+There are eleven (unordered) pairs of discs that intersect, namely:
+
+discs 1 and 4 intersect, and both intersect with all the other discs;
+disc 2 also intersects with discs 0 and 3. Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array A describing N discs as explained above, returns
+the number of (unordered) pairs of intersecting discs. The function
+should return −1 if the number of intersecting pairs exceeds 10,000,000.
+
+Given array A shown above, the function should return 11, as explained
+above.
+
+Assume that  
+N is an integer within the range \[0..100,000\]; each element of array A
+is an integer within the range \[0..2,147,483,647\]. Complexity:
+
+expected worst-case time complexity is O(N\*log(N)); expected worst-case
+space complexity is O(N), beyond input storage (not counting the storage
+required for input arguments).
+
+# [Solutions to Lesson 7: Stacks and Queues](./src/main/java/com/codility/lessons/StacksQueues)
+
+- [**Brackets:**](./src/main/java/com/codility/lessons/StacksQueues/Brackets.java)
+  Determine whether a given string of parentheses (multiple types) is
+  properly nested.
+
+A string S consisting of N characters is considered to be properly
+nested if any of the following conditions is true:
+
+S is empty; S has the form "VW" where V and W are properly nested
+strings. For example, the string "{\[()()\]}" is properly nested but
+"(\[)()\]" is not.
+
+Write a function:
+
+``` java
+class Solution { public int solution(String S); }
+```
+
+that, given a string S consisting of N characters, returns 1 if S is
+properly nested and 0 otherwise.
+
+For example, given S = "{\[()()\]}", the function should return 1 and
+given S = "(\[)()\]", the function should return 0, as explained above.
+
+Assume that  
+N is an integer within the range \[0..200,000\]; string S consists only
+of the following characters: "(", "{", "\[", "\]", "}" and/or ")".
+
+Complexity  
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(N) (not counting the storage required for input
+arguments).
+
+- [**Nesting:**](./src/main/java/com/codility/lessons/StacksQueues/Nesting.java)
+  Determine whether a given string of parentheses (single type) is
+  properly nested.
+
+A string S consisting of N characters is called properly nested if:
+
+S is empty; S has the form "(U)" where U is a properly nested string; S
+has the form "VW" where V and W are properly nested strings. For
+example, string "<span class="indexterm"></span>)((())" is properly
+nested but string "())" isn’t.
+
+Write a function:
+
+``` java
+class Solution { public int solution(String S); }
+```
+
+that, given a string S consisting of N characters, returns 1 if string S
+is properly nested and 0 otherwise.
+
+For example, given S = "<span class="indexterm"></span>)((())", the
+function should return 1 and given S = "())", the function should return
+0, as explained above.
+
+Assume that  
+N is an integer within the range \[0..1,000,000\]; string S consists
+only of the characters "(" and/or ")".
+
+Complexity  
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(1) (not counting the storage required for input
+arguments).
+
+- [**StoneWall:**](./src/main/java/com/codility/lessons/StacksQueues/StoneWall.java)
+  Cover "Manhattan skyline" using the minimum number of rectangles.
+
+You are going to build a stone wall. The wall should be straight and N
+meters long, and its thickness should be constant; however, it should
+have different heights in different places. The height of the wall is
+specified by an array H of N positive integers. H\[I\] is the height of
+the wall from I to I+1 meters to the right of its left end. In
+particular, H\[0\] is the height of the wall’s left end and H\[N−1\] is
+the height of the wall’s right end.
+
+The wall should be built of cuboid stone blocks (that is, all sides of
+such blocks are rectangular). Your task is to compute the minimum number
+of blocks needed to build the wall.
+
+Write a function:
+
+``` java
+class Solution { public int solution(int[] H); }
+```
+
+that, given an array H of N positive integers specifying the height of
+the wall, returns the minimum number of blocks needed to build it.
+
+For example, given array H containing N = 9 integers:
+
+``` java
+  H[0] = 8    H[1] = 8    H[2] = 5
+  H[3] = 7    H[4] = 9    H[5] = 8
+  H[6] = 7    H[7] = 4    H[8] = 8
+```
+
+the function should return 7. The figure shows one possible arrangement
+of seven blocks.
+
+Assume that  
+N is an integer within the range \[1..100,000\]; each element of array H
+is an integer within the range \[1..1,000,000,000\].
+
+Complexity  
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(N), beyond input storage (not counting the storage
+required for input arguments).
