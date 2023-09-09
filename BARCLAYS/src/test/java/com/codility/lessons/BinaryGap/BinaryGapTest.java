@@ -14,9 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
-/**
- * https://app.codility.com/demo/results/trainingABYQAR-B7W/
- */
+// BinaryGap
+// https://app.codility.com/programmers/lessons/1-iterations/binary_gap/
 @RunWith(SpringRunner.class)
 public class BinaryGapTest {
     private static Logger LOG = LoggerFactory.getLogger(BinaryGapTest.class);
@@ -46,10 +45,10 @@ public class BinaryGapTest {
     }
 
     @Test
-    public void solutionTest() {
+    public void solutionTest_1() {
 
         int n = 1041;// 10000010001
-        int res = binaryGap.solution(n);
+        int res = binaryGap.solution1(n);
         LOG.info("res-->" + res);
 
         assertNotNull(res);
@@ -58,91 +57,276 @@ public class BinaryGapTest {
         // LOG.info("diff-->"+diff);
 
         // example2 example test n=15=1111_2
-        res = binaryGap.solution(15);
+        res = binaryGap.solution1(15);
         LOG.info("15--->" + res);
         assertEquals(res, 0);
 
         // extremes n=1, n=5=101_2 and n=2147483647=2**31-1
-        res = binaryGap.solution(1);
+        res = binaryGap.solution1(1);
         LOG.info("1--->" + res);
         assertEquals(res, 0);
 
-        res = binaryGap.solution(5);
+        res = binaryGap.solution1(5);
         LOG.info("5--->" + res);
         assertEquals(res, 1);
 
-        res = binaryGap.solution(2147483647);
+        res = binaryGap.solution1(2147483647);
         LOG.info("2147483647--->" + res);
         assertEquals(res, 0);
 
         // trailing_zeroes n=6=110_2 and n=328=101001000_2
-        res = binaryGap.solution(6);
+        res = binaryGap.solution1(6);
         LOG.info("6(110_2)--->" + res);
         assertEquals(res, 0);
 
-        res = binaryGap.solution(328);
+        res = binaryGap.solution1(328);
         LOG.info("328(101001000_2)--->" + res);
         assertEquals(res, 2);
 
-        res = binaryGap.solution(101001000_2);
+        res = binaryGap.solution1(101001000_2);
         LOG.info("res--->" + res);
         assertEquals(res, 4);
 
         // power_of_2 n=5=101_2, n=16=2**4 and n=1024=2**10
-        res = binaryGap.solution(5);
+        res = binaryGap.solution1(5);
         LOG.info("5=101_2--->" + res);
         assertEquals(res, 1);
 
-        res = binaryGap.solution(16);
+        res = binaryGap.solution1(16);
         LOG.info("16=2**4--->" + res);
         assertEquals(res, 0);
 
-        res = binaryGap.solution(1024);
+        res = binaryGap.solution1(1024);
         LOG.info("1024=2**10--->" + res);
         assertEquals(res, 0);
 
         // simple1 n=9=1001_2 and n=11=1011_2
-        res = binaryGap.solution(9);
+        res = binaryGap.solution1(9);
         LOG.info("9=1001_2--->" + res);
         assertEquals(res, 2);
 
-        res = binaryGap.solution(11);
+        res = binaryGap.solution1(11);
         LOG.info("11=1011_2--->" + res);
         assertEquals(res, 1);
 
         // simple2 n=19=10011 and n=42=101010_2
-        res = binaryGap.solution(19);
+        res = binaryGap.solution1(19);
         LOG.info("19=10011--->" + res);
         assertEquals(res, 2);
 
-        res = binaryGap.solution(42);
+        res = binaryGap.solution1(42);
         LOG.info("42=101010_2--->" + res);
         assertEquals(res, 1);
 
         // simple3 n=1162=10010001010_2 and n=5=101_2
-        res = binaryGap.solution(1162);
+        res = binaryGap.solution1(1162);
         LOG.info("1162=10010001010_2--->" + res);
         assertEquals(res, 3);
 
-        res = binaryGap.solution(5);
+        res = binaryGap.solution1(5);
         LOG.info("5=101_2--->" + res);
         assertEquals(res, 1);
 
         // medium1 n=51712=110010100000000_2 and n=20=10100_2
-        res = binaryGap.solution(51712);
+        res = binaryGap.solution1(51712);
         LOG.info("51712=110010100000000_2--->" + res);
         assertEquals(res, 2);
 
-        res = binaryGap.solution(20);
+        res = binaryGap.solution1(20);
         LOG.info("20=10100_2--->" + res);
         assertEquals(res, 1);
     }
 
+    @Test
+    public void solutionTest_2() {
+
+        int n = 1041;// 10000010001
+        int res = binaryGap.solution2(n);
+        LOG.info("res-->" + res);
+
+        assertNotNull(res);
+        assertEquals(res, 5);
+
+        // LOG.info("diff-->"+diff);
+
+        // example2 example test n=15=1111_2
+        res = binaryGap.solution2(15);
+        LOG.info("15--->" + res);
+        assertEquals(res, 0);
+
+        // extremes n=1, n=5=101_2 and n=2147483647=2**31-1
+        res = binaryGap.solution2(1);
+        LOG.info("1--->" + res);
+        assertEquals(res, 0);
+
+        res = binaryGap.solution2(5);
+        LOG.info("5--->" + res);
+        assertEquals(res, 1);
+
+        res = binaryGap.solution2(2147483647);
+        LOG.info("2147483647--->" + res);
+        assertEquals(res, 0);
+
+        // trailing_zeroes n=6=110_2 and n=328=101001000_2
+        res = binaryGap.solution2(6);
+        LOG.info("6(110_2)--->" + res);
+        assertEquals(res, 0);
+
+        res = binaryGap.solution2(328);
+        LOG.info("328(101001000_2)--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution2(101001000_2);
+        LOG.info("res--->" + res);
+        assertEquals(res, 4);
+
+        // power_of_2 n=5=101_2, n=16=2**4 and n=1024=2**10
+        res = binaryGap.solution2(5);
+        LOG.info("5=101_2--->" + res);
+        assertEquals(res, 1);
+
+        res = binaryGap.solution2(16);
+        LOG.info("16=2**4--->" + res);
+        assertEquals(res, 0);
+
+        res = binaryGap.solution2(1024);
+        LOG.info("1024=2**10--->" + res);
+        assertEquals(res, 0);
+
+        // simple1 n=9=1001_2 and n=11=1011_2
+        res = binaryGap.solution2(9);
+        LOG.info("9=1001_2--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution2(11);
+        LOG.info("11=1011_2--->" + res);
+        assertEquals(res, 1);
+
+        // simple2 n=19=10011 and n=42=101010_2
+        res = binaryGap.solution2(19);
+        LOG.info("19=10011--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution2(42);
+        LOG.info("42=101010_2--->" + res);
+        assertEquals(res, 1);
+
+        // simple3 n=1162=10010001010_2 and n=5=101_2
+        res = binaryGap.solution2(1162);
+        LOG.info("1162=10010001010_2--->" + res);
+        assertEquals(res, 3);
+
+        res = binaryGap.solution2(5);
+        LOG.info("5=101_2--->" + res);
+        assertEquals(res, 1);
+
+        // medium1 n=51712=110010100000000_2 and n=20=10100_2
+        res = binaryGap.solution2(51712);
+        LOG.info("51712=110010100000000_2--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution2(20);
+        LOG.info("20=10100_2--->" + res);
+        assertEquals(res, 1);
+    }
+
+    @Test
+    public void solutionTest_3() {
+
+        int n = 1041;// 10000010001
+        int res = binaryGap.solution3(n);
+        LOG.info("res-->" + res);
+
+        assertNotNull(res);
+        assertEquals(res, 5);
+
+        // LOG.info("diff-->"+diff);
+
+        // example2 example test n=15=1111_2
+        res = binaryGap.solution3(15);
+        LOG.info("15--->" + res);
+        assertEquals(res, 0);
+
+        // extremes n=1, n=5=101_2 and n=2147483647=2**31-1
+        res = binaryGap.solution3(1);
+        LOG.info("1--->" + res);
+        assertEquals(res, 0);
+
+        res = binaryGap.solution3(5);
+        LOG.info("5--->" + res);
+        assertEquals(res, 1);
+
+        res = binaryGap.solution3(2147483647);
+        LOG.info("2147483647--->" + res);
+        assertEquals(res, 0);
+
+        // trailing_zeroes n=6=110_2 and n=328=101001000_2
+        res = binaryGap.solution3(6);
+        LOG.info("6(110_2)--->" + res);
+        assertEquals(res, 0);
+
+        res = binaryGap.solution3(328);
+        LOG.info("328(101001000_2)--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution3(101001000_2);
+        LOG.info("res--->" + res);
+        assertEquals(res, 4);
+
+        // power_of_2 n=5=101_2, n=16=2**4 and n=1024=2**10
+        res = binaryGap.solution3(5);
+        LOG.info("5=101_2--->" + res);
+        assertEquals(res, 1);
+
+        res = binaryGap.solution3(16);
+        LOG.info("16=2**4--->" + res);
+        assertEquals(res, 0);
+
+        res = binaryGap.solution3(1024);
+        LOG.info("1024=2**10--->" + res);
+        assertEquals(res, 0);
+
+        // simple1 n=9=1001_2 and n=11=1011_2
+        res = binaryGap.solution3(9);
+        LOG.info("9=1001_2--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution3(11);
+        LOG.info("11=1011_2--->" + res);
+        assertEquals(res, 1);
+
+        // simple2 n=19=10011 and n=42=101010_2
+        res = binaryGap.solution3(19);
+        LOG.info("19=10011--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution3(42);
+        LOG.info("42=101010_2--->" + res);
+        assertEquals(res, 1);
+
+        // simple3 n=1162=10010001010_2 and n=5=101_2
+        res = binaryGap.solution3(1162);
+        LOG.info("1162=10010001010_2--->" + res);
+        assertEquals(res, 3);
+
+        res = binaryGap.solution3(5);
+        LOG.info("5=101_2--->" + res);
+        assertEquals(res, 1);
+
+        // medium1 n=51712=110010100000000_2 and n=20=10100_2
+        res = binaryGap.solution3(51712);
+        LOG.info("51712=110010100000000_2--->" + res);
+        assertEquals(res, 2);
+
+        res = binaryGap.solution3(20);
+        LOG.info("20=10100_2--->" + res);
+        assertEquals(res, 1);
+    }
 
     @Test(timeout = 500)
     public void timeTest() {
         // extremes n=1, n=5=101_2 and n=2147483647=2**31-1
-        int res = binaryGap.solution(2147483647);
+        int res = binaryGap.solution1(2147483647);
         LOG.info("1--->" + res);
 
     }

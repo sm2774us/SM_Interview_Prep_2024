@@ -14,17 +14,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class PermutationCheckTest {
-	private static Logger LOG = LoggerFactory.getLogger(PermutationCheckTest.class);
+public class MissingIntegerTest {
+	private static Logger LOG = LoggerFactory.getLogger(MissingIntegerTest.class);
 
-	static PermutationCheck permutationCheck;
+	static MissingInteger missingInteger;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		permutationCheck = new PermutationCheck();
+		missingInteger = new MissingInteger();
 	}
 
 	static long start, end;
@@ -48,22 +48,15 @@ public class PermutationCheckTest {
 
 	@Test
 	public void solutionTest_1() {
-		int[] A = {4,1,3,2};
-		int res = permutationCheck.solution1(A);
-		assertEquals(res, 1);
+		final int[] A = {1, 3, 6, 4, 1, 2};
+		final int result = missingInteger.solution1(A);
+		assertEquals(result, 5);
 	}
 
 	@Test
 	public void solutionTest_2() {
-		int[] A = {4,1,3,2};
-		int res = permutationCheck.solution2(A);
-		assertEquals(res, 1);
-	}
-
-	@Test
-	public void solutionTest_3() {
-		int[] A = {4,1,3,2};
-		int res = permutationCheck.solution3(A);
-		assertEquals(res, 1);
+		final int[] A = {1, 3, 6, 4, 1, 2};
+		final int result = missingInteger.solution2(A);
+		assertEquals(result, 5);
 	}
 }

@@ -5,37 +5,56 @@ package com.codility.lessons.Arrays;
 
 public class OddOccurrencesInArray {
 
-	public static int solution(int[] A) {
-		int unpaired = 0;
-		for (int number : A) {
-			printBinaryFormat(number);
-			System.out.println(" number===>"+number);
-			unpaired ^= number;
-			printBinaryFormat(unpaired);
-			System.out.println(" unpaired===>"+unpaired);
-			System.out.println("<=========>");
-		}
-		return unpaired;
-	}
+	/**
+	 * Solution 1:
+	 * XOR Solution
+	 */
+    public int solution1(int[] A) {
+        // Using the concept of "XOR" (^)
+        // when there is a pair A and B 
+        // A^B will be zero 
+        // A^B^C (where C is not paired), 
+        // then A^B^C = C
+        
+        // special case
+        if(A.length == 0)
+            return 0;
+        
+        int unpaired;
+        unpaired = A[0]; // initial
+        
+        for(int i=1; i< A.length; i++){    
+            unpaired = unpaired ^ A[i]; // xor    
+        }
+        
+        return unpaired; // return the unpaired value
+    }
+
+	/**
+	 * Solution 2:
+	 * Java Solution using HashSet Data Structure.
+	 */
+    public int solution2(final int[] A) {
+
+        final Set<Integer> set = new HashSet<>();
+
+        for (int i : A) {
+            if (!set.add(i)) {
+                set.remove(i);
+            }
+        }
+
+        return set.iterator().next();
+    }
 	
 	public static void main(String[] args) {
 		int[] A = {9,3,9,3,9,7,9};
 		
-		int res = solution(A);
-		printBinaryFormat(res);
+		int res = solution1(A);
 		System.out.println(" res===>"+res);
 
-		//https://codility.com/demo/results/trainingNRQ4RE-4T9/
+		int res = solution2(A);
+		System.out.println(" res===>"+res);
 	}
-	 public static void printBinaryFormat(int number){
-	        int binary[] = new int[25];
-	        int index = 0;
-	        while(number > 0){
-	            binary[index++] = number%2;
-	            number = number/2;
-	        }
-	        for(int i = index-1;i >= 0;i--){
-	            System.out.print(binary[i]);
-	        }
-	    }
+
 }

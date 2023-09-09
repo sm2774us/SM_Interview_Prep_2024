@@ -33,41 +33,64 @@ import java.util.Arrays;
  */
 public class PermMissingElem {
 
-	public static void main(String[] args) {
-		int[] input = {2,3,1,5};
-		int result = missingElem(input);
-		System.out.println("result1--->"+result);
-		
-		result = solution(input);
-		System.out.print("result11--->"+result);
-
-	}
-
-	static int missingElem(int[] A){ // Function to Find Missing Element
-		long sum = 0; // Will Hold Sum of All Numbers from 1 to N+1
-		long arraysum = 0; // Will Hold Sum of All Numbers in Array
-		long missing = 0; // Will Hold Missing Value
-
-		for (int i = 0; i < A.length; i++) {// Get Sum of All Numbers from 1 to  N+1, and Array
-			sum += (i + 1);
-			arraysum += A[i];
-		}
-		sum += A.length + 1; // Add Last Number in Range (N+1)
-		missing = sum - arraysum; // Subtract Sum of Array from Sum of Range to get Missing Value
-		return (int) missing; // Return Missing Value
-	}
-	
-	//https://codility.com/demo/results/trainingPRHEBN-NCZ/
-	static int solution(int[] data) {
-        long N = data.length + 1;
-        long total = (N * (N + 1)) / 2;
-        long sum = 0L;
-        for (int i : data) {
-            sum += i;
-        }
-        return (int) (total - sum);
+	private long calcSum(int[] A) {
+        long sum = 0;
+        
+        for(int elem: A) { sum += elem; }
+        
+        return sum;
     }
-	static int solution1(int[] A) {
+
+	/**
+	 * Solution 1:
+	 */
+    public int solution1(int[] A) {
+        // since all distinct, we are safe.. some controls can be omitted
+        // if the missing also available, sum would be n (n + 1) / 2 where n = length (A) + 1
+        // tip: sums should be long, since might overflow for large n
+        long shouldBeLength = A.length + 1;
+        long shouldBeSum = shouldBeLength * (shouldBeLength + 1) / 2;
+        
+        return (int) (shouldBeSum - calcSum(A));
+        
+    }
+
+	/**
+	 * Solution 2:
+     * Using the concept of "Sum = (ceiling + floor) * height /2"
+	 */
+    public int solution2(int[] A) {
+        // Using the concept of "Sum = (ceiling + floor) * height /2"
+        // So---> Sum = (1 + N+1) * N /2
+        // the missing element can be found by minus other elements
+        
+        // note: need to use "long" to avoid potential bugs (large numbers)
+        long ceiling = A.length +1;
+        long floor = 1;
+        long height = A.length + 1; // note: need to plus extra "1" 
+                                    // because there is one element "missing"! 
+                                    // be careful about this (important)
+        long sum = (ceiling +floor) * height /2; // main idea
+        /*        
+        int high = A.length +1; 
+        int low = 1;
+        int height = A.length + 1; 
+        int sum = (high +low) * height /2; // main idea
+        */
+        long missing_number = sum; // initial setting (sum)
+        
+        for(int i=0; i<A.length; i++){
+            missing_number = missing_number - A[i]; // minus other elements
+        }
+        
+        return (int)missing_number; // return the missing element (long->int)
+    }
+
+	/**
+	 * Solution 3:
+     * Java8 Stream Solution
+	 */
+	public int solution3(int[] A) {
 		if(A == null){
 			return 0;
 		}
@@ -76,6 +99,18 @@ public class PermMissingElem {
 		long expectedSum = (N*(N+1))/2;
         return (int)(expectedSum-arraySum);
     }
-	
+
+	public static void main(String[] args) {
+		PermMissingElem permMissingElem = new PermMissingElem();		
+		int[] input = {2,3,1,5};
+		int result1 = permMissingElem.solution1(input);
+		System.out.println("result1--->"+result1);
+		
+		int result2 = permMissingElem.solution2(input);
+		System.out.println("result2--->"+result2);
+
+		int result3 = permMissingElem.solution3(input);
+		System.out.println("result3--->"+result3);
+	}
 
 }

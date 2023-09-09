@@ -3,14 +3,18 @@
 ## Table Of Contents <a name="top"></a>
 
 1. [BARCLAYS](#barclays)  
- - 1.1   [BinaryGap](#binary-gap)
- - 1.2   [Limit Order](#limit-order)
- - 1.3   [Stop Order](#stop-order)
+ - 1.1   [Lesson 1 Iterations](#lesson-1-iterations)
+   - 1.1.1   [Binary Gap](#binary-gap)
+ - 1.2   [Lesson 2 Arrays](#lesson-2-arrays)
+   - 1.2.1   [Odd Occurrences In Arrays](#odd-occurrences-in-arrays)
+   - 1.2.2   [Odd Occurrences In Arrays](#odd-occurrences-in-arrays)
+ - 1.3   [Frog Jump](#frog-jump)
  - 1.4   [Cancellation of Limit or Stop Orders](#cancellation-of-limit-or-stop-orders)
 
-#### [Binary Gap](./src/main/java/com/codility/lessons/BinaryGap)
+#### [Lesson 1 Iterations](./src/main/java/com/codility/lessons/BinaryGap)
 
-- [**Binary Gap:**](./src/main/java/com/codility/lessons/BinaryGap/BinaryGap.java)
+##### [Binary Gap](./src/main/java/com/codility/lessons/BinaryGap/BinaryGap.java)
+
 Find longest sequence of zeros in binary representation of an integer.
 
 A binary gap within a positive integer N is any maximal sequence of
@@ -216,64 +220,11 @@ n in Binary--->1
 max gap--->5
 ```
 
-# [Arrays](./src/com/codility/lessons/Arrays)
+#### [Lesson 2 Arrays](./src/main/java/com/codility/lessons/Arrays)
 
-- [**Odd Occurrences In
-  Array:**](./src/main/java/com/codility/lessons/Arrays/OddOccurrencesInArray.java)
-  Find value that occurs in odd number of elements.
+##### [Cyclic Rotation](./src/main/java/com/codility/lessons/Arrays/CyclicRotation.java)
 
-A non-empty zero-indexed array A consisting of N integers is given. The
-array contains an odd number of elements, and each element of the array
-can be paired with another element that has the same value, except for
-one element that is left unpaired.
-
-For example, in array A such that:
-
-``` java
-  A[0] = 9  A[1] = 3  A[2] = 9
-  A[3] = 3  A[4] = 9  A[5] = 7
-  A[6] = 9
-```
-
-the elements at indexes 0 and 2 have value 9, the elements at indexes 1
-and 3 have value 3, the elements at indexes 4 and 6 have value 9, the
-element at index 5 has value 7 and is unpaired. Write a function:
-
-``` java
-class Solution { public int solution(int[] A); }
-```
-
-that, given an array A consisting of N integers fulfilling the above
-conditions, returns the value of the unpaired element.
-
-For example, given array A such that:
-
-``` java
-  A[0] = 9  A[1] = 3  A[2] = 9
-  A[3] = 3  A[4] = 9  A[5] = 7
-  A[6] = 9
-```
-
-the function should return 7, as explained in the example above.
-
-Assume that  
-N is an odd integer within the range \[1..1,000,000\]; each element of
-array A is an integer within the range \[1..1,000,000,000\]; all but one
-of the values in A occur an even number of times. Complexity:
-
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(1), beyond input storage (not counting the storage
-required for input arguments).
-
-- [**Cyclic
-  Rotation:**](./src/main/java/com/codility/lessons/Arrays/CyclicRotation.java)
-  Rotate an array to the right by a given number of steps. A
-  zero-indexed array A consisting of N integers is given. Rotation of
-  the array means that each element is shifted right by one index, and
-  the last element of the array is moved to the first place. For
-  example, the rotation of array A = \[3, 8, 9, 7, 6\] is \[6, 3, 8, 9,
-  7\] (elements are shifted right by one index and 6 is moved to the
-  first place).
+Rotate an array to the right by a given number of steps. A zero-indexed array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = \[3, 8, 9, 7, 6\] is \[6, 3, 8, 9, 7\] (elements are shifted right by one index and 6 is moved to the first place).
 
 The goal is to rotate array A K times; that is, each element of A will
 be shifted to the right K times.
@@ -323,14 +274,138 @@ A is an integer within the range \[−1,000..1,000\]. In your solution,
 focus on correctness. The performance of your solution will not be the
 focus of the assessment.
 
-# [Solutions to Lesson 3: Time Complexity](./src/com/codility/lessons/TimeComplexity)
+```java
+package com.codility.lessons.Arrays;
 
-- [**Frog
-  Jump:**](./src/main/java/com/codility/lessons/TimeComplexity/FrogJmp.java)
-  Count minimal number of jumps from position X to Y. A small frog wants
-  to get to the other side of the road. The frog is currently located at
-  position X and wants to get to a position greater than or equal to Y.
-  The small frog always jumps a fixed distance, D.
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.stream.Collectors;
+
+/**
+
+ */
+public class CyclicRotation {
+
+    public static void main(String[] args) {
+        int[] A = {
+            -3,
+            8,
+            9,
+            -7,
+            6
+        };
+        int K = 3;
+
+        int[] sol1 = solution1(A, K);
+        System.out.println("sol1-->" + Arrays.toString(sol1));
+
+        int[] sol2 = solution2(A, K);
+        System.out.println("sol2-->" + Arrays.toString(sol2));
+    }
+
+    /**
+     * Java solution using the concept of "mod" (to make it cyclic)
+     */
+    public static int[] solution1(int[] A, int K) {
+        // Using the concept of "mod" (to make it cyclic)
+        
+        int[] new_array = new int[A.length]; // a new array
+        
+        for(int i=0; i< A.length; i++){
+            int new_position = (i + K) % A.length; // using "mod" to do Cyclic Rotation           
+            new_array[new_position] = A[i]; // put A[i] to the new position
+        }
+        
+        return new_array; // return new array
+    }
+
+    /**
+     *  Java8 Stream Solution
+     */
+    public static int[] solution2(int[] A, int K) {
+        if (A.length == 0) {
+            return A;
+        }
+
+        final LinkedList<Integer> list = Arrays.stream(A)
+                .boxed()
+                .collect(Collectors.toCollection(LinkedList::new));
+
+        while (K > 0) {
+            list.addFirst(list.getLast());
+            list.removeLast();
+            K--;
+        }
+
+        return list.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+    }
+}
+```
+
+```bash
+# Output
+
+sol1-->[9, -7, 6, -3, 8]
+sol2-->[9, -7, 6, -3, 8]
+```
+
+##### [Odd Occurrences In Array](./src/main/java/com/codility/lessons/Arrays/OddOccurrencesInArray.java)
+
+Find value that occurs in odd number of elements.
+
+A non-empty zero-indexed array A consisting of N integers is given. The
+array contains an odd number of elements, and each element of the array
+can be paired with another element that has the same value, except for
+one element that is left unpaired.
+
+For example, in array A such that:
+
+``` java
+  A[0] = 9  A[1] = 3  A[2] = 9
+  A[3] = 3  A[4] = 9  A[5] = 7
+  A[6] = 9
+```
+
+the elements at indexes 0 and 2 have value 9, the elements at indexes 1
+and 3 have value 3, the elements at indexes 4 and 6 have value 9, the
+element at index 5 has value 7 and is unpaired. Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array A consisting of N integers fulfilling the above
+conditions, returns the value of the unpaired element.
+
+For example, given array A such that:
+
+``` java
+  A[0] = 9  A[1] = 3  A[2] = 9
+  A[3] = 3  A[4] = 9  A[5] = 7
+  A[6] = 9
+```
+
+the function should return 7, as explained in the example above.
+
+Assume that  
+N is an odd integer within the range \[1..1,000,000\]; each element of
+array A is an integer within the range \[1..1,000,000,000\]; all but one
+of the values in A occur an even number of times. Complexity:
+
+expected worst-case time complexity is O(N); expected worst-case space
+complexity is O(1), beyond input storage (not counting the storage
+required for input arguments).
+
+#### [Solutions to Lesson 3: Time Complexity](./src/com/codility/lessons/TimeComplexity)
+
+##### [Frog Jump](./src/main/java/com/codility/lessons/TimeComplexity/FrogJmp.java)
+
+Count minimal number of jumps from position X to Y. A small frog wants
+to get to the other side of the road. The frog is currently located at
+position X and wants to get to a position greater than or equal to Y.
+The small frog always jumps a fixed distance, D.
 
 Count the minimal number of jumps that the small frog must perform to
 reach its target.
@@ -366,12 +441,9 @@ Complexity:
 expected worst-case time complexity is O(1); expected worst-case space
 complexity is O(1).
 
-- [**Perm Missing
-  Element:**](./src/main/java/com/codility/lessons/TimeComplexity/PermMissingElem.java)
-  Find the missing element in a given permutation. A zero-indexed array
-  A consisting of N different integers is given. The array contains
-  integers in the range \[1..(N + 1)\], which means that exactly one
-  element is missing.
+- [Perm Missing Element](./src/main/java/com/codility/lessons/TimeComplexity/PermMissingElem.java)
+
+Find the missing element in a given permutation. A zero-indexed array `A` consisting of `N` different integers is given. The array contains integers in the range \[1..(N + 1)\], which means that exactly one element is missing.
 
 Your goal is to find that missing element.
 
@@ -404,10 +476,9 @@ expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(1), beyond input storage (not counting the storage
 required for input arguments).
 
-- [**Tape
-  Equilibrium:**](./src/main/java/com/codility/lessons/TimeComplexity/TapeEquilibrium.java)
-  Minimize the value \|(A\[0\] + … + A\[P-1\]) - (A\[P\] + … +
-  A\[N-1\])\|.
+- [Tape  Equilibrium](./src/main/java/com/codility/lessons/TimeComplexity/TapeEquilibrium.java)
+
+Minimize the value \|(A\[0\] + … + A\[P-1\]) - (A\[P\] + … + A\[N-1\])\|.
 
 A non-empty zero-indexed array A consisting of N integers is given.
 Array A represents numbers on a tape.
@@ -472,9 +543,9 @@ required for input arguments).
 
 # [Solutions to Lesson 4: Counting Elements](./src/com/codility/lessons/CountingElements)
 
-- [**Permutation
-  Check:**](./src/main/java/com/codility/lessons/CountingElements/PermutationCheck.java)
-  Check whether array A is a permutation.
+- [Permutation Check](./src/main/java/com/codility/lessons/CountingElements/PermutationCheck.java)
+
+Check whether array A is a permutation.
 
 A non-empty zero-indexed array A consisting of N integers is given.
 
@@ -542,8 +613,9 @@ required for input arguments).
 
 # [Solutions to Lesson 6: Sorting](./src/main/java/com/codility/lessons/Sorting)
 
-- [**Distinct:**](./src/main/java/com/codility/lessons/Sorting/Distinct.java)
-  Compute number of distinct values in an array.
+- [Distinct](./src/main/java/com/codility/lessons/Sorting/Distinct.java)
+
+Compute number of distinct values in an array.
 
 Write a function
 
@@ -630,8 +702,9 @@ expected worst-case time complexity is O(N\*log(N)); expected worst-case
 space complexity is O(N), beyond input storage (not counting the storage
 required for input arguments).
 
-- [**MaxProductOfThree:**](./src/main/java/com/codility/lessons/Sorting/MaxProductOfThree.java)
-  Maximize A\[P\] \* A\[Q\] \* A\[R\] for any triplet (P, Q, R).
+- [MaxProductOfThree](./src/main/java/com/codility/lessons/Sorting/MaxProductOfThree.java)
+
+Maximize A\[P\] \* A\[Q\] \* A\[R\] for any triplet (P, Q, R).
 
 A non-empty zero-indexed array A consisting of N integers is given. The
 product of triplet (P, Q, R) equates to A\[P\] \* A\[Q\] \* A\[R\] (0 ≤
@@ -739,9 +812,9 @@ required for input arguments).
 
 # [Solutions to Lesson 7: Stacks and Queues](./src/main/java/com/codility/lessons/StacksQueues)
 
-- [**Brackets:**](./src/main/java/com/codility/lessons/StacksQueues/Brackets.java)
-  Determine whether a given string of parentheses (multiple types) is
-  properly nested.
+- [Brackets](./src/main/java/com/codility/lessons/StacksQueues/Brackets.java)
+
+Determine whether a given string of parentheses (multiple types) is properly nested.
 
 A string S consisting of N characters is considered to be properly
 nested if any of the following conditions is true:
@@ -771,9 +844,9 @@ expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(N) (not counting the storage required for input
 arguments).
 
-- [**Nesting:**](./src/main/java/com/codility/lessons/StacksQueues/Nesting.java)
-  Determine whether a given string of parentheses (single type) is
-  properly nested.
+- [Nesting](./src/main/java/com/codility/lessons/StacksQueues/Nesting.java)
+
+Determine whether a given string of parentheses (single type) is properly nested.
 
 A string S consisting of N characters is called properly nested if:
 

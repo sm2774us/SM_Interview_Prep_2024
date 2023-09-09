@@ -1,99 +1,69 @@
 package com.codility.lessons.Arrays;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 /**
 
  */
 public class CyclicRotation {
 
-	public static void main(String[] args) {
-	
-	//https://codility.com/demo/results/trainingUBWFTE-G5D/
-	int[]	A = {-3, 8, 9, -7, 6} ;
-	int K = 3;
-	
-    int[] sol1 = solution1(A,K);
-    System.out.println("sol1-->"+Arrays.toString(sol1));
-    
-    int[] sol2 = solution2(A,K);
-    System.out.println("sol2-->"+Arrays.toString(sol2));
-    
-    int[] sol3 = solution3(A,K);
-    System.out.println("sol3-->"+Arrays.toString(sol3));
-    
-    
-    int[] sol4 = solution4(A,K);
-    System.out.println("sol4-->"+Arrays.toString(sol4));
-	}
-	
-	
-	public static int [] solution1(int [] A, int K) {
+    public static void main(String[] args) {
+        int[] A = {
+            -3,
+            8,
+            9,
+            -7,
+            6
+        };
+        int K = 3;
 
-	    int size = A.length;
-	    int ret[] = new  int [size];
+        int[] sol1 = solution1(A, K);
+        System.out.println("sol1-->" + Arrays.toString(sol1));
 
-	    if (K < 0 || K > 100 || size == 0) {
-	        return ret;
-	    }
-
-	    if (size == 1) {
-	        return A;
-	    }
-
-	    for (int i = 0; i < size; i++) {
-	        ret[(i + K) % size] = A[i];
-	        
-	      //when i=0 then (0+3)=3 =>(3 modulo 5)= 3
-	    }
-
-	    return ret;
-	}
-	
-	public static int [] solution2(int [] A, int K) 
-    {
-        int N = A.length;
-        if (N==0)
-            return A;
-        if (K>=N)
-            K %= N;
-        if (K==0)
-            return A;
-        int [] rotA = new  int [N];
-        for (int i=0; i<N; i++)
-            rotA[i] = (i<K) ? A[N+i-K] : A[i-K];
-        return rotA;
+        int[] sol2 = solution2(A, K);
+        System.out.println("sol2-->" + Arrays.toString(sol2));
     }
-	
-	public static int[] solution3(int[] A, int K) {
-        int length = A.length;
-        if (length == 0) {
+
+    /**
+     * Solution 1:
+     * Java solution using the concept of "mod" (to make it cyclic)
+     */
+    public static int[] solution1(int[] A, int K) {
+        // Using the concept of "mod" (to make it cyclic)
+        
+        int[] new_array = new int[A.length]; // a new array
+        
+        for(int i=0; i< A.length; i++){
+            int new_position = (i + K) % A.length; // using "mod" to do Cyclic Rotation           
+            new_array[new_position] = A[i]; // put A[i] to the new position
+        }
+        
+        return new_array; // return new array
+    }
+
+    /**
+     *  Solution 2:
+     *  Java8 Stream Solution
+     */
+    public static int[] solution2(int[] A, int K) {
+        if (A.length == 0) {
             return A;
         }
-        int[] result = new int[length];
-        int rIdx = 0;
-        int times = K % length;
-        int idx = length - times;
-        for (int i = idx; i < length; i++) {
-            result[rIdx] = A[i];
-            rIdx++;
+
+        final LinkedList<Integer> list = Arrays.stream(A)
+                .boxed()
+                .collect(Collectors.toCollection(LinkedList::new));
+
+        while (K > 0) {
+            list.addFirst(list.getLast());
+            list.removeLast();
+            K--;
         }
-        for (int i = 0; i < idx; i++) {
-            result[rIdx] = A[i];
-            rIdx++;
-        }
-        return result;
+
+        return list.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
     }
-	
-	  public static int[] solution4(int[] A, int K) {
-
-	        int[] result = new int[A.length];
-
-	        for (int i = 0; i < result.length; i++) {
-	            int newPosition = (i + K) % result.length;
-	            result[newPosition] = A[i];
-	        }
-
-	        return result;
-	    }
 }

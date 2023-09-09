@@ -14,17 +14,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class PermutationCheckTest {
-	private static Logger LOG = LoggerFactory.getLogger(PermutationCheckTest.class);
+public class MaxCountersTest {
+	private static Logger LOG = LoggerFactory.getLogger(MaxCountersTest.class);
 
-	static PermutationCheck permutationCheck;
+	static MaxCounters maxCounters;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		permutationCheck = new PermutationCheck();
+		maxCounters = new MaxCounters();
 	}
 
 	static long start, end;
@@ -48,22 +48,21 @@ public class PermutationCheckTest {
 
 	@Test
 	public void solutionTest_1() {
-		int[] A = {4,1,3,2};
-		int res = permutationCheck.solution1(A);
-		assertEquals(res, 1);
+		final int[] expected = {3,2,2,4,2};
+		final int N = 5;
+		final int[] A = {3,4,4,6,1,4,4};
+
+		final int result = maxCounters.solution1(N, A);
+		assertEquals(result, expected);
 	}
 
 	@Test
 	public void solutionTest_2() {
-		int[] A = {4,1,3,2};
-		int res = permutationCheck.solution2(A);
-		assertEquals(res, 1);
-	}
+		final int[] expected = {3,2,2,4,2};
+		final int N = 5;
+		final int[] A = {3,4,4,6,1,4,4};
 
-	@Test
-	public void solutionTest_3() {
-		int[] A = {4,1,3,2};
-		int res = permutationCheck.solution3(A);
-		assertEquals(res, 1);
+		final int result = maxCounters.solution2(N, A);
+		assertEquals(result, expected);
 	}
 }
