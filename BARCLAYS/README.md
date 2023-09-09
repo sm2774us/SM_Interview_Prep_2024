@@ -51,45 +51,44 @@ worst-case space complexity is O(1).
 ```java
 // Bit-Wise Solution
 
-class BinaryGap
-{
-    public static int solution(int n) { 
-		    // get rid of right-hand zeros
-	      while (n != 0 && (n & 1) == 0) {
-	    	    System.out.println("n--->"+n);
-	    	    System.out.println("n in Binary--->"+Integer.toBinaryString(n));
-	            n >>>= 1;
-	      }
+class BinaryGap {
+    public static int solution(int n) {
+        // get rid of right-hand zeros
+        while (n != 0 && (n & 1) == 0) {
+            System.out.println("n--->" + n);
+            System.out.println("n in Binary--->" + Integer.toBinaryString(n));
+            n >>>= 1;
+        }
         System.out.println("Got rid of all the right-hand zeros");
-        System.out.println("n--->"+n);
-        System.out.println("n in Binary--->"+Integer.toBinaryString(n));
-	    
+        System.out.println("n--->" + n);
+        System.out.println("n in Binary--->" + Integer.toBinaryString(n));
+
         int max = 0;
         int gap = 0;
         while (n != 0) {
-	          System.out.println("n--->"+n);
-	          System.out.println("n in Binary--->"+Integer.toBinaryString(n));
-	          System.out.println("n&1--->"+(n&1));
-	          if ((n & 1) == 0) {
-	              System.out.println("n--->"+n);
-	              System.out.println("n in Binary--->"+Integer.toBinaryString(n));
-	              gap++;
-	              max = Math.max(gap, max);
-	          } else {
-	              gap = 0;
-	          }
-	          n >>>= 1;
+            System.out.println("n--->" + n);
+            System.out.println("n in Binary--->" + Integer.toBinaryString(n));
+            System.out.println("n&1--->" + (n & 1));
+            if ((n & 1) == 0) {
+                System.out.println("n--->" + n);
+                System.out.println("n in Binary--->" + Integer.toBinaryString(n));
+                gap++;
+                max = Math.max(gap, max);
+            } else {
+                gap = 0;
+            }
+            n >>>= 1;
         }
         return max;
     }
 
-    public static void main (String[] args) throws java.lang.Exception {
-		    //int n = 1041;
-		    int n = 1040;
-		    System.out.println("n--->"+n);
-		    System.out.println("n in Binary--->"+Integer.toBinaryString(n));
-		    int sol = solution(n);
-		    System.out.println("max gap--->"+sol);
+    public static void main(String[] args) throws java.lang.Exception {
+        //int n = 1041;
+        int n = 1040;
+        System.out.println("n--->" + n);
+        System.out.println("n in Binary--->" + Integer.toBinaryString(n));
+        int sol = solution(n);
+        System.out.println("max gap--->" + sol);
     }
 }
 ```
