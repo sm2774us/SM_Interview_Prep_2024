@@ -50,7 +50,7 @@ public class OddOccurrencesInArrayTest {
         final int[] input = {9, 3, 9, 3, 9, 7, 9};
 
         // when
-        final int[] result = oddOccurrencesInArray.solution1(input);
+        final int result = oddOccurrencesInArray.solution1(input);
 
         // then
         assertThat(result).isEqualTo(7);
@@ -62,7 +62,7 @@ public class OddOccurrencesInArrayTest {
         final int[] input = {9, 3, 9, 3, 9, 7, 9};
 
         // when
-        final int[] result = oddOccurrencesInArray.solution2(input);
+        final int result = oddOccurrencesInArray.solution2(input);
 
         // then
         assertThat(result).isEqualTo(7);

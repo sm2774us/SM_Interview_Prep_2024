@@ -1,6 +1,7 @@
 package com.codility.lessons.CountingElements;
 
-// import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 class MissingInteger {
 
@@ -34,7 +35,7 @@ class MissingInteger {
 
         // Using "set" to check if an element has appeared
         // note: need to "import java.util.*" (important)
-        Set < Integer > set = new HashSet < Integer > ();
+        Set<Integer> set = new HashSet<>();
 
         // add elements into the set
         for (int i = 0; i < A.length; i++) {

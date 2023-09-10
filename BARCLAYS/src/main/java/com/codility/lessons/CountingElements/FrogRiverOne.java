@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class FrogRiverOne {
 
-    public int solution1(int[] A) {
+    public int solution1(int X, int[] A) {
         // the main ideas:
         // 1. create a "set", and put "1~X" into the set first.
         // 2. when a number matches a number in the set, 
@@ -16,7 +16,7 @@ public class FrogRiverOne {
         // 3. when the set becomes "empty",
         //    all the numbers "1~X" have appeared
         
-        Set<Integer> set = new HashSet<Integer>();
+        Set<Integer> set = new HashSet<>();
         
         // put "1~X" into the set first
         for(int i=1; i<= X; i++){
@@ -36,7 +36,7 @@ public class FrogRiverOne {
         return -1;
     }
 
-    public int solution2(int[] A) {
+    public int solution2(int X, int[] A) {
         // X can fit in memory and O(X) space is allowed - task spec 
         // indicates whether there is leaf at point X
         // frog needs each point to be true 

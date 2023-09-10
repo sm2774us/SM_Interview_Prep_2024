@@ -48,97 +48,17 @@ public class FrogRiverOneTest {
 
 	@Test
 	public void solutionTest_1() {
-
-		int[] A = new int[5];
-		for (int i = 0; i < 5; i++) {
-			A[i] = i + 100;
-			// LOG.info("A-->" + A[i]);
-		}
-
-		int res = frogRiverOne.solution1(A);
-		assertEquals(res, 0);
-
-		A = new int[100];
-		for (int i = 99; i >= 0; i--) {
-			A[i] = i;
-			// LOG.info("A-->" + A[i] );
-		}
-		res = frogRiverOne.solution1(A);
-		assertEquals(res, 0);
-
-		A = new int[100];
-		for (int i = 99; i >= 0; i--) {
-			A[i] = i;
-			// LOG.info("A-->" + A[i] );
-		}
-
-		res = frogRiverOne.solution1(A);
-		assertEquals(res, 0);
-
-		A = new int[100];
-		for (int i = 0; i < 100; i++) {
-			A[i] = i;
-			// LOG.info("A-->" + A[i] );
-		}
-
-		res = frogRiverOne.solution1(A);
-		assertEquals(res, 0);
-
-		A = new int[5];
-		for (int i = 0; i < 5; i++) {
-			A[i] = i + 1;
-			// LOG.info("A-->" + A[i] );
-		}
-
-		res = frogRiverOne.solution1(A);
-		assertEquals(res, 1);
+		final int[] A = { 1, 3, 1, 4, 2, 3, 5, 4 };
+		final int X = 5;
+		final int res = frogRiverOne.solution1(X, A);
+		assertEquals(res, 6);
 	}
 
 	@Test
 	public void solutionTest_2() {
-
-		int[] A = new int[5];
-		for (int i = 0; i < 5; i++) {
-			A[i] = i + 100;
-			// LOG.info("A-->" + A[i]);
-		}
-
-		int res = frogRiverOne.solution2(A);
-		assertEquals(res, 0);
-
-		A = new int[100];
-		for (int i = 99; i >= 0; i--) {
-			A[i] = i;
-			// LOG.info("A-->" + A[i] );
-		}
-		res = frogRiverOne.solution2(A);
-		assertEquals(res, 0);
-
-		A = new int[100];
-		for (int i = 99; i >= 0; i--) {
-			A[i] = i;
-			// LOG.info("A-->" + A[i] );
-		}
-
-		res = frogRiverOne.solution2(A);
-		assertEquals(res, 0);
-
-		A = new int[100];
-		for (int i = 0; i < 100; i++) {
-			A[i] = i;
-			// LOG.info("A-->" + A[i] );
-		}
-
-		res = frogRiverOne.solution2(A);
-		assertEquals(res, 0);
-
-		A = new int[5];
-		for (int i = 0; i < 5; i++) {
-			A[i] = i + 1;
-			// LOG.info("A-->" + A[i] );
-		}
-
-		res = frogRiverOne.solution2(A);
-		assertEquals(res, 1);
+		final int[] A = { 1, 3, 1, 4, 2, 3, 5, 4 };
+		final int X = 5;
+		final int res = frogRiverOne.solution2(X, A);
+		assertEquals(res, 6);
 	}
 }

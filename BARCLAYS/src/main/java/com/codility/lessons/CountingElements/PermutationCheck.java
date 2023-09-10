@@ -41,7 +41,7 @@ public class PermutationCheck {
         // If all the elements have appeared, then "yes".
         // Otherwise, "no".
         
-        Set<Integer> set = new HashSet<Integer>();
+        Set<Integer> set = new HashSet<>();
         
         for(int i=0; i < A.length; i++){
             set.add(A[i]);

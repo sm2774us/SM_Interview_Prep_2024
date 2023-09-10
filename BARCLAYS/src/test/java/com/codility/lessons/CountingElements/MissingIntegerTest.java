@@ -48,15 +48,31 @@ public class MissingIntegerTest {
 
 	@Test
 	public void solutionTest_1() {
-		final int[] A = {1, 3, 6, 4, 1, 2};
-		final int result = missingInteger.solution1(A);
+		int[] A = {1, 3, 6, 4, 1, 2};
+		int result = missingInteger.solution1(A);
 		assertEquals(result, 5);
+
+		A = new int[] {1, 2, 3};
+		result = missingInteger.solution1(A);
+		assertEquals(result, 4);
+
+		A = new int[] {-1, -3};
+		result = missingInteger.solution1(A);
+		assertEquals(result, 1);
 	}
 
 	@Test
 	public void solutionTest_2() {
-		final int[] A = {1, 3, 6, 4, 1, 2};
-		final int result = missingInteger.solution2(A);
+		int[] A = {1, 3, 6, 4, 1, 2};
+		int result = missingInteger.solution2(A);
 		assertEquals(result, 5);
+
+		A = new int[] {1, 2, 3};
+		result = missingInteger.solution2(A);
+		assertEquals(result, 4);
+
+		A = new int[] {-1, -3};
+		result = missingInteger.solution2(A);
+		assertEquals(result, 1);
 	}
 }

@@ -3,15 +3,49 @@
 ## Table Of Contents <a name="top"></a>
 
 1. [BARCLAYS](#barclays)  
- - 1.1   [Lesson 1 Iterations](#lesson-1-iterations)
+ - 1.1   [Lesson 1: Iterations](#lesson-1-iterations)
    - 1.1.1   [Binary Gap](#binary-gap)
- - 1.2   [Lesson 2 Arrays](#lesson-2-arrays)
-   - 1.2.1   [Odd Occurrences In Arrays](#odd-occurrences-in-arrays)
+ - 1.2   [Lesson 2: Arrays](#lesson-2-arrays)
+   - 1.2.1   [Cyclic Rotation](#cyclic-rotation)
    - 1.2.2   [Odd Occurrences In Arrays](#odd-occurrences-in-arrays)
- - 1.3   [Frog Jump](#frog-jump)
- - 1.4   [Cancellation of Limit or Stop Orders](#cancellation-of-limit-or-stop-orders)
+ - 1.3   [Lesson 3: Time Complexity](#lesson-3-time-complexity)
+   - 1.3.1   [Frog Jump](#frog-jump)
+   - 1.3.2   [Perm Missing Element](#perm-missing-element)
+   - 1.3.3   [Tape  Equilibrium](#tape-equilibrium)
+ - 1.4   [Lesson 4: Counting Elements](#lesson-4-counting-elements)
+   - 1.4.1   [Frog River One](#frog-river-one)
+   - 1.4.2   [Permutation Check](#permutation-check)
+   - 1.4.3   [Max Counters](#max-counters)
+   - 1.4.4   [Missing Integer](#missing-integer)
+ - 1.5   [Lesson 5: Prefix Sums](#lesson-5-prefix-sums)
+   - 1.5.1   [Passing Cars](#passing-cars)
+   - 1.5.2   [Count Divisible](#count-divisible)
+   - 1.5.3   [Genomic Range Query](#genomic-range-query)
+   - 1.5.4   [Minimal Average Two Slice](#minimal-average-two-slice)
+ - 1.6   [Lesson 6: Sorting](#lesson-6-sorting)
+   - 1.6.1   [Distinct](#distinct)
+   - 1.6.2   [Max Product Of Three](#max-product-of-three)
+   - 1.6.3   [Triangle](#triangle)
+   - 1.6.4   [Number Of Disc Intersections](#number-of-disc-intersections)
+ - 1.7   [Lesson 7: Stacks and Queues](#lesson-7-stacks-and-queues)
+   - 1.7.1   [Distinct](#distinct)
+   - 1.7.2   [Fish](#fish)
+   - 1.7.3   [Nesting](#nesting)
+   - 1.7.4   [StoneWall](#stonewall)
+ - 1.8   [Lesson 8: Leader](#lesson-8-leader)
+   - 1.8.1   [Dominator](#dominator)
+   - 1.8.2   [Equi Leader](#equi-leader)
+ - 1.9   [Lesson 9: Maximum Slice Problem](#maximum-slice-problem)
+ - 1.10   [Lesson 10: Prime and Composite Numbers](#prime-and-composite-numbers)
+ - 1.11   [Lesson 11: Sieve of Eratosthenes](#sieve-of-eratosthenes)
+ - 1.12   [Lesson 12: Euclidean Algorithm](#euclidean-algorithm)
+ - 1.13   [Lesson 13: Fibonacci Numbers](#fibonacci-numbers)
+ - 1.14   [Lesson 14: Binary Search Algorithm](#binary-search-algorithm)
+ - 1.15   [Lesson 15: Caterpillar Method](#caterpillar-method)
+ - 1.16   [Lesson 16: Greedy Algorithms](#greedy-algorithms)
+ - 1.17   [Lesson 17: Dynamic Programming](#dynamic-programming)
 
-#### [Lesson 1 Iterations](./src/main/java/com/codility/lessons/BinaryGap)
+#### [Lesson 1: Iterations](./src/main/java/com/codility/lessons/BinaryGap)
 
 ##### [Binary Gap](./src/main/java/com/codility/lessons/BinaryGap/BinaryGap.java)
 
@@ -219,7 +253,7 @@ n in Binary--->1
 max gap--->5
 ```
 
-#### [Lesson 2 Arrays](./src/main/java/com/codility/lessons/Arrays)
+#### [Lesson 2: Arrays](./src/main/java/com/codility/lessons/Arrays)
 
 ##### [Cyclic Rotation](./src/main/java/com/codility/lessons/Arrays/CyclicRotation.java)
 
@@ -397,7 +431,7 @@ expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(1), beyond input storage (not counting the storage
 required for input arguments).
 
-#### [Solutions to Lesson 3: Time Complexity](./src/com/codility/lessons/TimeComplexity)
+#### [Lesson 3: Time Complexity](./src/com/codility/lessons/TimeComplexity)
 
 ##### [Frog Jump](./src/main/java/com/codility/lessons/TimeComplexity/FrogJmp.java)
 
@@ -440,7 +474,7 @@ Complexity:
 expected worst-case time complexity is O(1); expected worst-case space
 complexity is O(1).
 
-- [Perm Missing Element](./src/main/java/com/codility/lessons/TimeComplexity/PermMissingElem.java)
+##### [Perm Missing Element](./src/main/java/com/codility/lessons/TimeComplexity/PermMissingElem.java)
 
 Find the missing element in a given permutation. A zero-indexed array `A` consisting of `N` different integers is given. The array contains integers in the range \[1..(N + 1)\], which means that exactly one element is missing.
 
@@ -475,7 +509,7 @@ expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(1), beyond input storage (not counting the storage
 required for input arguments).
 
-- [Tape  Equilibrium](./src/main/java/com/codility/lessons/TimeComplexity/TapeEquilibrium.java)
+##### [Tape  Equilibrium](./src/main/java/com/codility/lessons/TimeComplexity/TapeEquilibrium.java)
 
 Minimize the value \|(A\[0\] + … + A\[P-1\]) - (A\[P\] + … + A\[N-1\])\|.
 
@@ -540,9 +574,61 @@ expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(N), beyond input storage (not counting the storage
 required for input arguments).
 
-# [Solutions to Lesson 4: Counting Elements](./src/com/codility/lessons/CountingElements)
+#### [Lesson 4: Counting Elements](./src/com/codility/lessons/CountingElements)
 
-- [Permutation Check](./src/main/java/com/codility/lessons/CountingElements/PermutationCheck.java)
+##### [Frog River One](./src/main/java/com/codility/lessons/CountingElements/FrogRiverOne.java)
+
+A small frog wants to get to the other side of a river. The frog is initially located on one bank of the river (position 0) and wants to get to the opposite bank (position X+1). Leaves fall from a tree onto the surface of the river.
+
+You are given an array A consisting of N integers representing the falling leaves. A[K] represents the position where one leaf falls at time K, measured in seconds.
+
+The goal is to find the earliest time when the frog can jump to the other side of the river. The frog can cross only when leaves appear at every position across the river from `1` to `X` (that is, we want to find the earliest moment when all the positions from 1 to X are covered by leaves). You may assume that the speed of the current in the river is negligibly small, i.e. the leaves do not change their positions once they fall in the river.
+
+For example, you are given integer `X = 5` and array `A` such that:
+
+``` java
+  A[0] = 1
+  A[1] = 3
+  A[2] = 1
+  A[3] = 4
+  A[4] = 2
+  A[5] = 3
+  A[6] = 5
+  A[7] = 4
+```
+
+In second 6, a leaf falls into position 5. This is the earliest time when leaves appear in every position across the river.
+
+Write a function:
+
+```java
+class Solution { public int solution(int X, int[] A); }
+```
+
+that, given a non-empty array `A` consisting of `N` integers and integer `X`, returns the earliest time when the frog can jump to the other side of the river.
+
+If the frog is never able to jump to the other side of the river, the function should return −1.
+
+For example, given `X = 5` and array `A` such that:
+
+``` java
+  A[0] = 1
+  A[1] = 3
+  A[2] = 1
+  A[3] = 4
+  A[4] = 2
+  A[5] = 3
+  A[6] = 5
+  A[7] = 4
+````
+the function should return 6, as explained above.
+
+Write an efficient algorithm for the following assumptions:
+
+- `N` and `X` are integers within the range `[1..100,000]`;
+- each element of array `A` is an integer within the range `[1..X]`.
+
+##### [Permutation Check](./src/main/java/com/codility/lessons/CountingElements/PermutationCheck.java)
 
 Check whether array A is a permutation.
 
@@ -603,16 +689,278 @@ Given array A such that:
 the function should return 0.
 
 Assume that  
-N is an integer within the range \[1..100,000\]; each element of array A
-is an integer within the range \[1..1,000,000,000\]. Complexity:
+- `N` is an integer within the range \[1..100,000\]; each element of array `A`
+- is an integer within the range \[1..1,000,000,000\].
 
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(N), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
 
-# [Solutions to Lesson 6: Sorting](./src/main/java/com/codility/lessons/Sorting)
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
-- [Distinct](./src/main/java/com/codility/lessons/Sorting/Distinct.java)
+##### [Max Counters](./src/main/java/com/codility/lessons/CountingElements/MaxCounters.java)
+
+You are given `N` counters, initially set to 0, and you have two possible operations on them:
+
+- `increase(X) −` counter X is increased by 1,
+- `max counter −` all counters are set to the maximum value of any counter.
+
+A non-empty array A of M integers is given. This array represents consecutive operations:
+
+- if `A[K] = X`, such that `1 ≤ X ≤ N`, then operation `K` is `increase(X)`,
+- if `A[K] = N + 1` then operation `K` is max counter.
+
+For example, given integer `N = 5` and array `A` such that:
+
+```java
+    A[0] = 3
+    A[1] = 4
+    A[2] = 4
+    A[3] = 6
+    A[4] = 1
+    A[5] = 4
+    A[6] = 4
+```
+
+the values of the counters after each consecutive operation will be:
+
+```java
+    (0, 0, 1, 0, 0)
+    (0, 0, 1, 1, 0)
+    (0, 0, 1, 2, 0)
+    (2, 2, 2, 2, 2)
+    (3, 2, 2, 2, 2)
+    (3, 2, 2, 3, 2)
+    (3, 2, 2, 4, 2)
+```
+
+The goal is to calculate the value of every counter after all operations.
+
+Write a function:
+
+```java
+class Solution { public int[] solution(int N, int[] A); }
+```
+
+that, given an integer `N` and a non-empty array `A` consisting of `M` integers, returns a sequence of integers representing the values of the counters.
+
+Result array should be returned as an array of integers.
+
+For example, given:
+
+```java
+    A[0] = 3
+    A[1] = 4
+    A[2] = 4
+    A[3] = 6
+    A[4] = 1
+    A[5] = 4
+    A[6] = 4
+```
+
+the function should return `[3, 2, 2, 4, 2]`, as explained above.
+
+Write an efficient algorithm for the following assumptions:
+
+- `N` and `M` are integers within the range `[1..100,000]`;
+- each element of array `A` is an integer within the range `[1..N + 1]`.
+
+##### [Missing Integer](./src/main/java/com/codility/lessons/CountingElements/MissingInteger.java)
+
+This is a demo task.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array `A` of `N` integers, returns the smallest positive integer (greater than 0) that does not occur in `A`.
+
+For example, given `A = [1, 3, 6, 4, 1, 2]`, the function should return `5`.
+
+Given `A = [1, 2, 3]`, the function should return `4`.
+
+Given `A = [−1, −3]`, the function should return `1`.
+
+Write an efficient algorithm for the following assumptions:
+
+- `N` is an integer within the range `[1..100,000]`;
+- each element of array `A` is an integer within the range `[−1,000,000..1,000,000]`.
+
+#### [Lesson 5: Prefix Sums](./src/main/java/com/codility/lessons/PrefixSums)
+
+##### [Passing Cars](./src/main/java/com/codility/lessons/PrefixSums/PassingCars.java)
+
+A non-empty array `A` consisting of `N` integers is given. The consecutive elements of array A represent consecutive cars on a road.
+
+Array `A` contains only 0s and/or 1s:
+
+- 0 represents a car traveling east,
+- 1 represents a car traveling west.
+
+The goal is to count passing cars. We say that a pair of cars `(P, Q)`, where `0 ≤ P < Q < N`, is passing when `P` is traveling to the east and `Q` is traveling to the west.
+
+For example, consider array `A` such that:
+
+```java
+  A[0] = 0
+  A[1] = 1
+  A[2] = 0
+  A[3] = 1
+  A[4] = 1
+```
+
+We have five pairs of passing cars: `(0, 1), (0, 3), (0, 4), (2, 3), (2, 4)`.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty array `A` of `N` integers, returns the number of pairs of passing cars.
+
+The function should return −1 if the number of pairs of passing cars exceeds 1,000,000,000.
+
+For example, given:
+
+```java
+  A[0] = 0
+  A[1] = 1
+  A[2] = 0
+  A[3] = 1
+  A[4] = 1
+```
+
+the function should return 5, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- `N` is an integer within the range `[1..100,000]`;
+- each element of array `A` is an integer that can have one of the following values: `0, 1`.
+
+##### [Count Divisible](./src/main/java/com/codility/lessons/PrefixSums/CountDiv.java)
+
+Write a function:
+
+```java
+class Solution { public int solution(int A, int B, int K); }
+```
+
+that, given three integers `A`, `B` and `K`, returns the number of integers within the range `[A..B]` that are divisible by `K`, i.e.:
+
+`{ i : A ≤ i ≤ B, i mod K = 0 }`
+
+For example, for `A = 6`, `B = 11` and `K = 2`, your function should return 3, because there are three numbers divisible by 2 within the range `[6..11]`, namely 6, 8 and 10.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- `A` and `B` are integers within the range `[0..2,000,000,000]`;
+- `K` is an integer within the range `[1..2,000,000,000]`;
+- `A ≤ B`.
+
+##### [Genomic Range Query](./src/main/java/com/codility/lessons/PrefixSums/GenomicRangeQuery.java)
+
+A DNA sequence can be represented as a string consisting of the letters `A`, `C`, `G` and `T`, which correspond to the types of successive nucleotides in the sequence. Each nucleotide has an impact factor, which is an integer. Nucleotides of types `A`, `C`, `G` and `T` have impact factors of `1`, `2`, `3` and `4`, respectively. You are going to answer several queries of the form: What is the minimal impact factor of nucleotides contained in a particular part of the given DNA sequence?
+
+The DNA sequence is given as a non-empty string `S = S[0]S[1]...S[N-1]` consisting of `N` characters. There are `M` queries, which are given in non-empty arrays P and Q, each consisting of `M` integers. The `K-th` query `(0 ≤ K < M)` requires you to find the minimal impact factor of nucleotides contained in the DNA sequence between positions `P[K]` and `Q[K]` (inclusive).
+
+For example, consider string `S = CAGCCTA` and arrays `P`, `Q` such that:
+
+```java
+    P[0] = 2    Q[0] = 4
+    P[1] = 5    Q[1] = 5
+    P[2] = 0    Q[2] = 6
+```
+
+The answers to these `M = 3` queries are as follows:
+
+- The part of the DNA between positions 2 and 4 contains nucleotides G and C (twice), whose impact factors are 3 and 2 respectively, so the answer is 2.
+- The part between positions 5 and 5 contains a single nucleotide T, whose impact factor is 4, so the answer is 4.
+- The part between positions 0 and 6 (the whole string) contains all nucleotides, in particular nucleotide A whose impact factor is 1, so the answer is 1.
+
+Write a function:
+
+```java
+class Solution { public int[] solution(String S, int[] P, int[] Q); }
+```
+
+that, given a non-empty string `S` consisting of `N` characters and two non-empty arrays P and `Q` consisting of `M` integers, returns an array consisting of `M` integers specifying the consecutive answers to all queries.
+
+Result array should be returned as an array of integers.
+
+For example, given the string S = CAGCCTA and arrays P, Q such that:
+
+```java
+    P[0] = 2    Q[0] = 4
+    P[1] = 5    Q[1] = 5
+    P[2] = 0    Q[2] = 6
+```
+
+the function should return the values `[2, 4, 1]`, as explained above.
+
+Write an efficient algorithm for the following assumptions:
+
+- `N` is an integer within the range `[1..100,000]`;
+- `M` is an integer within the range `[1..50,000]`;
+- each element of arrays `P` and `Q` is an integer within the range `[0..N - 1]`;
+- `P[K] ≤ Q[K]`, where `0 ≤ K < M`;
+- string `S` consists only of upper-case English letters `A, C, G, T`.
+
+##### [Minimal Average Two Slice](./src/main/java/com/codility/lessons/PrefixSums/MinAvgTwoSlice.java)
+
+A non-empty array `A` consisting of `N` integers is given. A pair of integers `(P, Q)`, such that `0 ≤ P < Q < N`, is called a slice of array `A` (notice that the slice contains at least two elements). The average of a slice `(P, Q)` is the sum of `A[P] + A[P + 1] + ... + A[Q]` divided by the length of the slice. To be precise, the average equals `(A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1)`.
+
+For example, array `A` such that:
+
+```java
+    A[0] = 4
+    A[1] = 2
+    A[2] = 2
+    A[3] = 5
+    A[4] = 1
+    A[5] = 5
+    A[6] = 8
+```
+
+contains the following example slices:
+
+- slice (1, 2), whose average is `(2 + 2) / 2 = 2`;
+- slice (3, 4), whose average is `(5 + 1) / 2 = 3`;
+- slice (1, 4), whose average is `(2 + 2 + 5 + 1) / 4 = 2.5`.
+
+The goal is to find the starting position of a slice whose average is minimal.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty array `A` consisting of `N` integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.
+
+For example, given array `A` such that:
+
+```java
+    A[0] = 4
+    A[1] = 2
+    A[2] = 2
+    A[3] = 5
+    A[4] = 1
+    A[5] = 5
+    A[6] = 8
+```
+
+the function should return 1, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- `N` is an integer within the range `[2..100,000]`;
+- each element of array `A` is an integer within the range `[−10,000..10,000]`.
+
+#### [Lesson 6: Sorting](./src/main/java/com/codility/lessons/Sorting)
+
+##### [Distinct](./src/main/java/com/codility/lessons/Sorting/Distinct.java)
 
 Compute number of distinct values in an array.
 
@@ -644,64 +992,7 @@ expected worst-case time complexity is O(N\*log(N)); expected worst-case
 space complexity is O(N), beyond input storage (not counting the storage
 required for input arguments).
 
-- [**Triangle:**](./src/main/java/com/codility/lessons/Sorting/Triangle.java)
-  Determine whether a triangle can be built from a given set of edges.
-
-A zero-indexed array A consisting of N integers is given. A triplet (P,
-Q, R) is triangular if 0 ≤ P \< Q \< R \< N and:
-
-``` java
-A[P] + A[Q] > A[R],
-A[Q] + A[R] > A[P],
-A[R] + A[P] > A[Q].
-```
-
-For example, consider array A such that:
-
-``` java
-  A[0] = 10    A[1] = 2    A[2] = 5
-  A[3] = 1     A[4] = 8    A[5] = 20
-```
-
-Triplet (0, 2, 4) is triangular.
-
-Write a function:
-
-``` java
-class Solution { public int solution(int[] A); }
-```
-
-that, given a zero-indexed array A consisting of N integers, returns 1
-if there exists a triangular triplet for this array and returns 0
-otherwise.
-
-For example, given array A such that:
-
-``` java
-  A[0] = 10    A[1] = 2    A[2] = 5
-  A[3] = 1     A[4] = 8    A[5] = 20
-```
-
-the function should return 1, as explained above. Given array A such
-that:
-
-``` java
-  A[0] = 10    A[1] = 50    A[2] = 5
-  A[3] = 1
-```
-
-the function should return 0.
-
-Assume that  
-N is an integer within the range \[0..100,000\]; each element of array A
-is an integer within the range \[−2,147,483,648..2,147,483,647\].
-Complexity:
-
-expected worst-case time complexity is O(N\*log(N)); expected worst-case
-space complexity is O(N), beyond input storage (not counting the storage
-required for input arguments).
-
-- [MaxProductOfThree](./src/main/java/com/codility/lessons/Sorting/MaxProductOfThree.java)
+##### [Max Product Of Three](./src/main/java/com/codility/lessons/Sorting/MaxProductOfThree.java)
 
 Maximize A\[P\] \* A\[Q\] \* A\[R\] for any triplet (P, Q, R).
 
@@ -761,9 +1052,67 @@ expected worst-case time complexity is O(N\*log(N)); expected worst-case
 space complexity is O(1), beyond input storage (not counting the storage
 required for input arguments).
 
-- [**Number Of Disc
-  Intersections:**](./src/main/java/com/codility/lessons/Sorting/NumberOfDiscIntersections.java)
-  Compute the number of intersections in a sequence of discs.
+##### [Triangle](./src/main/java/com/codility/lessons/Sorting/Triangle.java)
+
+Determine whether a triangle can be built from a given set of edges.
+
+A zero-indexed array A consisting of N integers is given. A triplet (P,
+Q, R) is triangular if 0 ≤ P \< Q \< R \< N and:
+
+``` java
+A[P] + A[Q] > A[R],
+A[Q] + A[R] > A[P],
+A[R] + A[P] > A[Q].
+```
+
+For example, consider array A such that:
+
+``` java
+  A[0] = 10    A[1] = 2    A[2] = 5
+  A[3] = 1     A[4] = 8    A[5] = 20
+```
+
+Triplet (0, 2, 4) is triangular.
+
+Write a function:
+
+``` java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a zero-indexed array A consisting of N integers, returns 1
+if there exists a triangular triplet for this array and returns 0
+otherwise.
+
+For example, given array A such that:
+
+``` java
+  A[0] = 10    A[1] = 2    A[2] = 5
+  A[3] = 1     A[4] = 8    A[5] = 20
+```
+
+the function should return 1, as explained above. Given array A such
+that:
+
+``` java
+  A[0] = 10    A[1] = 50    A[2] = 5
+  A[3] = 1
+```
+
+the function should return 0.
+
+Assume that  
+N is an integer within the range \[0..100,000\]; each element of array A
+is an integer within the range \[−2,147,483,648..2,147,483,647\].
+Complexity:
+
+expected worst-case time complexity is O(N\*log(N)); expected worst-case
+space complexity is O(N), beyond input storage (not counting the storage
+required for input arguments).
+
+##### [Number Of Disc Intersections](./src/main/java/com/codility/lessons/Sorting/NumberOfDiscIntersections.java)
+
+Compute the number of intersections in a sequence of discs.
 
 We draw N discs on a plane. The discs are numbered from 0 to N − 1. A
 zero-indexed array A of N non-negative integers, specifying the radiuses
@@ -809,9 +1158,9 @@ expected worst-case time complexity is O(N\*log(N)); expected worst-case
 space complexity is O(N), beyond input storage (not counting the storage
 required for input arguments).
 
-# [Solutions to Lesson 7: Stacks and Queues](./src/main/java/com/codility/lessons/StacksQueues)
+#### [Lesson 7: Stacks and Queues](./src/main/java/com/codility/lessons/StacksQueues)
 
-- [Brackets](./src/main/java/com/codility/lessons/StacksQueues/Brackets.java)
+##### [Brackets](./src/main/java/com/codility/lessons/StacksQueues/Brackets.java)
 
 Determine whether a given string of parentheses (multiple types) is properly nested.
 
@@ -843,7 +1192,53 @@ expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(N) (not counting the storage required for input
 arguments).
 
-- [Nesting](./src/main/java/com/codility/lessons/StacksQueues/Nesting.java)
+##### [Fish](./src/main/java/com/codility/lessons/StacksQueues/Fish.java)
+
+You are given two non-empty arrays `A` and `B` consisting of `N` integers. Arrays `A` and `B` represent `N` voracious fish in a river, ordered downstream along the flow of the river.
+
+The fish are numbered from `0 to N − 1`. If `P` and `Q` are two fish and `P < Q`, then fish `P` is initially upstream of fish `Q`. Initially, each fish has a unique position.
+
+Fish number `P` is represented by `A[P]` and `B[P]`. Array `A` contains the sizes of the fish. All its elements are unique. Array `B` contains the directions of the fish. It contains only `0s` and/or `1s`, where:
+
+- 0 represents a fish flowing upstream,
+- 1 represents a fish flowing downstream.
+
+If two fish move in opposite directions and there are no other (living) fish between them, they will eventually meet each other. Then only one fish can stay alive − the larger fish eats the smaller one. More precisely, we say that two fish `P` and `Q` meet each other when `P < Q`, `B[P] = 1` and `B[Q] = 0`, and there are no living fish between them. After they meet:
+
+- If `A[P] > A[Q]` then `P` eats `Q`, and `P` will still be flowing downstream,
+- If `A[Q] > A[P]` then `Q` eats `P`, and `Q` will still be flowing upstream.
+
+We assume that all the fish are flowing at the same speed. That is, fish moving in the same direction never meet. The goal is to calculate the number of fish that will stay alive.
+
+For example, consider arrays `A` and `B` such that:
+
+```java
+  A[0] = 4    B[0] = 0
+  A[1] = 3    B[1] = 1
+  A[2] = 2    B[2] = 0
+  A[3] = 1    B[3] = 0
+  A[4] = 5    B[4] = 0
+```
+Initially all the fish are alive and all except fish number 1 are moving upstream. Fish number 1 meets fish number 2 and eats it, then it meets fish number 3 and eats it too. Finally, it meets fish number 4 and is eaten by it. The remaining two fish, number 0 and 4, never meet and therefore stay alive.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A, int[] B); }
+```
+
+that, given two non-empty arrays `A` and `B` consisting of N integers, returns the number of fish that will stay alive.
+
+For example, given the arrays shown above, the function should return 2, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- `N` is an integer within the range `[1..100,000]`;
+- each element of array `A` is an integer within the range `[0..1,000,000,000]`;
+- each element of array `B` is an integer that can have one of the following values: `0, 1`;
+- the elements of `A` are all distinct.
+
+##### [Nesting](./src/main/java/com/codility/lessons/StacksQueues/Nesting.java)
 
 Determine whether a given string of parentheses (single type) is properly nested.
 
@@ -876,8 +1271,9 @@ expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(1) (not counting the storage required for input
 arguments).
 
-- [**StoneWall:**](./src/main/java/com/codility/lessons/StacksQueues/StoneWall.java)
-  Cover "Manhattan skyline" using the minimum number of rectangles.
+##### [StoneWall](./src/main/java/com/codility/lessons/StacksQueues/StoneWall.java)
+
+Cover "Manhattan skyline" using the minimum number of rectangles.
 
 You are going to build a stone wall. The wall should be straight and N
 meters long, and its thickness should be constant; however, it should
@@ -919,3 +1315,158 @@ Complexity
 expected worst-case time complexity is O(N); expected worst-case space
 complexity is O(N), beyond input storage (not counting the storage
 required for input arguments).
+
+#### [Lesson 8: Leader](./src/main/java/com/codility/lessons/Leader)
+
+##### [Dominator](./src/main/java/com/codility/lessons/Leader/Dominator.java)
+
+An array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the elements of A.
+
+For example, consider array A such that
+
+```java
+ A[0] = 3    A[1] = 4    A[2] =  3
+ A[3] = 2    A[4] = 3    A[5] = -1
+ A[6] = 3    A[7] = 3
+```
+
+The dominator of A is 3 because it occurs in 5 out of 8 elements of A (namely in those with indices 0, 2, 4, 6 and 7) and 5 is more than a half of 8.
+
+Write a function
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array A consisting of N integers, returns index of any element of array A in which the dominator of A occurs. The function should return −1 if array A does not have a dominator.
+
+For example, given array A such that
+
+```java
+ A[0] = 3    A[1] = 4    A[2] =  3
+ A[3] = 2    A[4] = 3    A[5] = -1
+ A[6] = 3    A[7] = 3
+```
+
+the function may return 0, 2, 4, 6 or 7, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- N is an integer within the range [0..100,000];
+- each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].
+
+##### [Equi Leader](./src/main/java/com/codility/lessons/Leader/EquiLeader.java)
+
+A non-empty array A consisting of N integers is given.
+
+The leader of this array is the value that occurs in more than half of the elements of A.
+
+An equi leader is an index S such that 0 ≤ S < N − 1 and two sequences A[0], A[1], ..., A[S] and A[S + 1], A[S + 2], ..., A[N − 1] have leaders of the same value.
+
+For example, given array A such that:
+
+```java
+    A[0] = 4
+    A[1] = 3
+    A[2] = 4
+    A[3] = 4
+    A[4] = 4
+    A[5] = 2
+```
+
+we can find two equi leaders:
+
+- 0, because sequences: (4) and (3, 4, 4, 4, 2) have the same leader, whose value is 4.
+- 2, because sequences: (4, 3, 4) and (4, 4, 2) have the same leader, whose value is 4.
+
+The goal is to count the number of equi leaders.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty array A consisting of N integers, returns the number of equi leaders.
+
+For example, given:
+
+```java
+    A[0] = 4
+    A[1] = 3
+    A[2] = 4
+    A[3] = 4
+    A[4] = 4
+    A[5] = 2
+```
+
+the function should return 2, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- N is an integer within the range [1..100,000];
+- each element of array A is an integer within the range [−1,000,000,000..1,000,000,000].
+
+#### [Lesson 9: Maximum Slice Problem](./src/main/java/com/codility/lessons/MaximumSliceProblem)
+
+##### [Max Profit](./src/main/java/com/codility/lessons/MaximumSliceProblem/MaxProfit.java)
+
+##### [Max Slice Sum](./src/main/java/com/codility/lessons/MaximumSliceProblem/MaxSliceSum.java)
+
+##### [Max Double Slice Sum](./src/main/java/com/codility/lessons/MaximumSliceProblem/MaxDoubleSliceSum.java)
+
+#### [Lesson 10: Prime and Composite Numbers](./src/main/java/com/codility/lessons/PrimeAndCompositeNumbers)
+
+##### [Count Factors](./src/main/java/com/codility/lessons/PrimeAndCompositeNumbers/CountFactors.java)
+
+##### [Min Perimeter Rectangle](./src/main/java/com/codility/lessons/PrimeAndCompositeNumbers/MinPerimeterRectangle.java)
+
+##### [Flags](./src/main/java/com/codility/lessons/PrimeAndCompositeNumbers/Flags.java)
+
+##### [Peaks](./src/main/java/com/codility/lessons/PrimeAndCompositeNumbers/Peaks.java)
+
+#### [Lesson 11: Sieve Of Eratosthenes](./src/main/java/com/codility/lessons/SieveOfEratosthenes)
+
+##### [Count Non Divisible](./src/main/java/com/codility/lessons/SieveOfEratosthenes/CountNonDivisible.java)
+
+##### [Count Semiprimes](./src/main/java/com/codility/lessons/SieveOfEratosthenes/CountSemiprimes.java)
+
+#### [Lesson 12: Euclidean Algorithm](./src/main/java/com/codility/lessons/EuclideanAlgorithm)
+
+##### [Chocolates By Numbers](./src/main/java/com/codility/lessons/EuclideanAlgorithm/ChocolatesByNumbers.java)
+
+##### [Common Prime Divisors](./src/main/java/com/codility/lessons/EuclideanAlgorithm/CommonPrimeDivisors.java)
+
+#### [Lesson 13: Fibonacci Numbers](./src/main/java/com/codility/lessons/FibonacciNumbers)
+
+##### [Fibonacci Frog](./src/main/java/com/codility/lessons/FibonacciNumbers/FibFrog.java)
+
+##### [Ladder](./src/main/java/com/codility/lessons/FibonacciNumbers/Ladder.java)
+
+#### [Lesson 14: Binary Search Algorithm](./src/main/java/com/codility/lessons/BinarySearchAlgorithm)
+
+##### [Min Max Division](./src/main/java/com/codility/lessons/BinarySearchAlgorithm/MinMaxDivision.java)
+
+##### [Nailing Planks](./src/main/java/com/codility/lessons/BinarySearchAlgorithm/NailingPlanks.java)
+
+#### [Lesson 15: Caterpillar Method](./src/main/java/com/codility/lessons/CaterpillarMethod)
+ 
+##### [Absolute Distinct](./src/main/java/com/codility/lessons/CaterpillarMethod/AbsDistinct.java)
+
+##### [Count Distinct Slices](./src/main/java/com/codility/lessons/CaterpillarMethod/CountDistinctSlices.java)
+
+##### [Count Triangles](./src/main/java/com/codility/lessons/CaterpillarMethod/CountTriangles.java)
+
+##### [Min Absolute Sum Of Two](./src/main/java/com/codility/lessons/CaterpillarMethod/MinAbsSumOfTwo.java)
+
+#### [Lesson 16: Greedy Algorithms](./src/main/java/com/codility/lessons/GreedyAlgorithms)
+
+##### [Max Nonoverlapping Segments](./src/main/java/com/codility/lessons/GreedyAlgorithms/MaxNonoverlappingSegments.java)
+
+##### [Tie Ropes](./src/main/java/com/codility/lessons/GreedyAlgorithms/TieRopes.java)
+
+#### [Lesson 17: Dynamic Programming](./src/main/java/com/codility/lessons/DynamicProgramming)
+
+##### [Number Solitaire](./src/main/java/com/codility/lessons/DynamicProgramming/NumberSolitaire.java)
+
+##### [Min Absolute Sum](./src/main/java/com/codility/lessons/DynamicProgramming/MinAbsSum.java)

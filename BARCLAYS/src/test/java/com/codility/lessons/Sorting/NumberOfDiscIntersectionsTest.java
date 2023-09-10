@@ -15,6 +15,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.codility.lessons.CountingElements.PermutationCheckTest;
 
+/**
+ * https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/
+ *
+ * @author Shaikat
+ *
+ */
 @RunWith(SpringRunner.class)
 public class NumberOfDiscIntersectionsTest {
 	private static Logger LOG = LoggerFactory.getLogger(PermutationCheckTest.class);
@@ -49,19 +55,23 @@ public class NumberOfDiscIntersectionsTest {
 	}
 
 	@Test
-	public void solution1Test() {
-		int[] A = new int[5];
-		for (int i = 0; i < 5; i++) {
-			A[i] = i + 100;
-			LOG.info("A-->" + A[i]);
-		}
-
+	public void solutionTest_1() {
+		final int[] A = {1, 5, 2, 1, 4, 0};
 		int res = numberOfDiscIntersections.solution1(A);
-		assertEquals(res, 0);
+		assertEquals(res, 11);
 	}
 
 	@Test
-	public void solution2Test() {
-
+	public void solutionTest_2() {
+		final int[] A = { 1, 5, 2, 1, 4, 0 };
+		int res = numberOfDiscIntersections.solution2(A);
+		assertEquals(res, 11);
+	}
+	
+	@Test
+	public void solutionTest_3() {
+		final int[] A = {1, 5, 2, 1, 4, 0};
+		int res = numberOfDiscIntersections.solution3(A);
+		assertEquals(res, 11);
 	}
 }

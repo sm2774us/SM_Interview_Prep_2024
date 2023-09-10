@@ -1,6 +1,6 @@
-package com.codility.lessons.StacksQueues;
+package com.codility.lessons.Leader;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.After;
 import org.junit.Before;
@@ -14,18 +14,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class StoneWallTest {
+public class DominatorTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(StoneWallTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(DominatorTest.class);
 
-	static StoneWall stoneWall;
+	static Dominator dominator;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		stoneWall = new StoneWall();
+		dominator = new Dominator();
 	}
 
 	static long start, end;
@@ -49,15 +49,29 @@ public class StoneWallTest {
 
 	@Test
     public void solutionTest_1() {
-        final int[] A = {8, 7, 7, 8, 9, 4, 5, 8, 8};
-		final int result = stoneWall.solution2(A);
-		assertEquals(result, 7);
+        final int[] A = {3, 4, 3, 2, 3, -1, 3, 3};
+		final int result = dominator.solution1(A);
+		assertThat(Integer.valueOf(result))
+			.isIn(
+				Integer.valueOf(0),
+				Integer.valueOf(2),
+				Integer.valueOf(4),
+				Integer.valueOf(6),
+				Integer.valueOf(7)
+			);
     }
     
 	@Test
     public void solutionTest_2() {
-        final int[] A = {8, 7, 7, 8, 9, 4, 5, 8, 8};
-		final int result = stoneWall.solution2(A);
-		assertEquals(result, 7);
+        final int[] A = {3, 4, 3, 2, 3, -1, 3, 3};
+		final int result = dominator.solution2(A);
+		assertThat(Integer.valueOf(result))
+			.isIn(
+				Integer.valueOf(0),
+				Integer.valueOf(2),
+				Integer.valueOf(4),
+				Integer.valueOf(6),
+				Integer.valueOf(7)
+			);
 	}
 }

@@ -5,18 +5,12 @@ import java.util.Arrays;
 /**
  * Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).
  * 
- * @author Sunil
+ * @author Shaikat
  *
  */
 public class MaxProductOfThree {
 
 	public int solution1(int[] A) {
-		Arrays.sort(A);
-		int N = A.length;
-		return Math.max(A[N - 3] * A[N - 2] * A[N - 1], A[0] * A[1] * A[N - 1]);
-	}
-
-	public int solution2(int[] A) {
 		int N = A.length;
 		// the worst-case time complexity is O(N*log(N))
 		Arrays.sort(A);
@@ -26,7 +20,7 @@ public class MaxProductOfThree {
 		return Math.max(A[0] * A[1] * A[N - 1], A[N - 3] * A[N - 2] * A[N - 1]);
 	}
 
-	public int solution3(int[] A) {
+	public int solution2(int[] A) {
 		// the variable stores the minimal negative element
 		int negativeMin = 0;
 		// the variable stores the second minimal negative element

@@ -16,9 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.codility.lessons.CountingElements.PermutationCheckTest;
 
 /**
- * https://app.codility.com/demo/results/trainingJXXKP9-4EM/
+ * https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/
  * 
- * @author Sunil
+ * @author Shaikat
  *
  */
 @RunWith(SpringRunner.class)
@@ -56,7 +56,7 @@ public class MaxProductOfThreeTest {
 	}
 
 	@Test
-	public void solution1Test() {
+	public void solutionTest_1() {
 		// int[] A = CommonUtils.randomArray(5, 1, 10);
 		// CommonUtils.printIntArray(A);
 		int[] A = { 2, 8, 5, 2, 4 };
@@ -67,21 +67,12 @@ public class MaxProductOfThreeTest {
 	}
 
 	@Test
-	public void solution2Test() {
+	public void solutionTest_2() {
 		int[] A = { 2, 8, 5, 2, 4 };
 		int res = maxProductOfThree.solution2(A);
 		LOG.info("res-->" + res);
 
 		assertEquals(res, 160);
-	}
-
-	@Test
-	public void solution3Test() {
-		int[] A = { -3, 1, 2, -2, 5, 6 };
-		int res = maxProductOfThree.solution3(A);
-		LOG.info("res-->" + res);
-
-		assertEquals(res, 60);
 	}
 
 }

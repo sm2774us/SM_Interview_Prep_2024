@@ -3,7 +3,7 @@ package com.codility.lessons.BinaryGap;
 public class BinaryGap {
 
 	private boolean isOne(int n) {
-		return N%2 == 1 || N == 1 ;
+		return n%2 == 1 || n == 1 ;
 	}
 
     public int solution1(int n) {

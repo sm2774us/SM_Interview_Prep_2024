@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 public class CyclicRotation {
 
     public static void main(String[] args) {
+        CyclicRotation cyclicRotation = new CyclicRotation();
         int[] A = {
             -3,
             8,
@@ -19,10 +20,10 @@ public class CyclicRotation {
         };
         int K = 3;
 
-        int[] sol1 = solution1(A, K);
+        int[] sol1 = cyclicRotation.(A, K);
         System.out.println("sol1-->" + Arrays.toString(sol1));
 
-        int[] sol2 = solution2(A, K);
+        int[] sol2 = cyclicRotation.(A, K);
         System.out.println("sol2-->" + Arrays.toString(sol2));
     }
 
@@ -30,7 +31,7 @@ public class CyclicRotation {
      * Solution 1:
      * Java solution using the concept of "mod" (to make it cyclic)
      */
-    public static int[] solution1(int[] A, int K) {
+    public int[] solution1(int[] A, int K) {
         // Using the concept of "mod" (to make it cyclic)
         
         int[] new_array = new int[A.length]; // a new array
@@ -47,7 +48,7 @@ public class CyclicRotation {
      *  Solution 2:
      *  Java8 Stream Solution
      */
-    public static int[] solution2(int[] A, int K) {
+    public int[] solution2(int[] A, int K) {
         if (A.length == 0) {
             return A;
         }

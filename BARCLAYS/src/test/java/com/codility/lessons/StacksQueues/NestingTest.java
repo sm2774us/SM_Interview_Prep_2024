@@ -13,12 +13,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.codility.lessons.CountingElements.PermutationCheckTest;
-
 @RunWith(SpringRunner.class)
 public class NestingTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(PermutationCheckTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(NestingTest.class);
 
 	static Nesting nesting;
 
@@ -50,19 +48,26 @@ public class NestingTest {
 	}
 
 	@Test
-	public void solution1Test() {
-		String s = "(()(())())";
+	public void solutionTest_1() {
+		final String s = "(()(())())";
 
-		int res = nesting.solution1(s);
+		final int res = nesting.solution1(s);
 		assertEquals(res, 1);
 	}
 
 	@Test
-	public void solution2Test() {
-		String s = "(()(())())";
+	public void solutionTest_2() {
+		final String s = "(()(())())";
 
-		int res = nesting.solution2(s);
+		final int res = nesting.solution2(s);
 		assertEquals(res, 1);
 	}
 
+	@Test
+	public void solutionTest_3() {
+		final String s = "(()(())())";
+
+		final int res = nesting.solution3(s);
+		assertEquals(res, 1);
+	}
 }

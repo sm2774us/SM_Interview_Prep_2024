@@ -47,7 +47,7 @@ public class CyclicRotationTest {
     @Test
     public void solutionTest_1() {
         // given
-        int A[] = {3, 8, 9, 7, 6};
+        int[] A = {3, 8, 9, 7, 6};
         int K = 3;
 
         // when
@@ -57,7 +57,7 @@ public class CyclicRotationTest {
         assertThat(result).isEqualTo(new int[]{9, 7, 6, 3, 8});
 
         // given
-        A[] = {};
+        A = new int[] {};
         K = 3;
 
         // when
@@ -70,7 +70,7 @@ public class CyclicRotationTest {
     @Test
     public void solutionTest_2() {
         // given
-        int A[] = {3, 8, 9, 7, 6};
+        int[] A = {3, 8, 9, 7, 6};
         int K = 3;
 
         // when
@@ -80,7 +80,7 @@ public class CyclicRotationTest {
         assertThat(result).isEqualTo(new int[]{9, 7, 6, 3, 8});
 
         // given
-        A[] = {};
+        A = new int[] {};
         K = 3;
 
         // when

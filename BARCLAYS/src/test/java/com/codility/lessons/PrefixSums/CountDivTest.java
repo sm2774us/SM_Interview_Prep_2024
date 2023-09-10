@@ -1,4 +1,4 @@
-package com.codility.lessons.Sorting;
+package com.codility.lessons.PrefixSums;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,27 +13,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.codility.lessons.CountingElements.PermutationCheckTest;
-
-/**
- * https://app.codility.com/programmers/lessons/6-sorting/distinct/
- * 
- * @author Shaikat
- *
- */
 @RunWith(SpringRunner.class)
-public class DistinctTest {
+public class CountDivTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(PermutationCheckTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(CountDivTest.class);
 
-	static Distinct distinct;
+	static CountDiv countDiv;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		distinct = new Distinct();
+		countDiv = new CountDiv();
 	}
 
 	static long start, end;
@@ -56,17 +48,20 @@ public class DistinctTest {
 	}
 
 	@Test
-	public void solutionTest_1() {
-		final int[] A = {2, 1, 1, 2, 3, 1};
-		final int res = distinct.solution1(A);
-		assertEquals(res, 3);
-	}
-
+    public void solutionTest_1() {
+        final int A = 6;
+		final int B = 11;
+		final int K = 2;
+		final int result = countDiv.solution1(A, B, K);
+		assertEquals(result, 3);
+    }
+    
 	@Test
-	public void solutionTest_2() {
-		final int[] A = {2, 1, 1, 2, 3, 1};
-		final int res = distinct.solution2(A);
-		assertEquals(res, 3);
+    public void solutionTest_2() {
+        final int A = 6;
+		final int B = 11;
+		final int K = 2;
+		final int result = countDiv.solution2(A, B, K);
+		assertEquals(result, 3);
 	}
-
 }

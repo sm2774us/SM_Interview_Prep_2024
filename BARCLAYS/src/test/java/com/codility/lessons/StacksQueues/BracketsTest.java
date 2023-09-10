@@ -13,12 +13,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.codility.lessons.CountingElements.PermutationCheckTest;
-
 @RunWith(SpringRunner.class)
 public class BracketsTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(PermutationCheckTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(BracketsTest.class);
 
 	static Brackets brackets;
 
@@ -50,11 +48,23 @@ public class BracketsTest {
 	}
 
 	@Test
-	public void solution1Test() {
-		String s = "{[()()]}";
-
-		int res = brackets.solution1(s);
-		assertEquals(res, 0);
+	public void solutionTest_1() {
+		final String s = "{[()()]}";
+		final int result = brackets.solution1(s);
+		assertEquals(result, 0);
 	}
 
+	@Test
+	public void solutionTest_2() {
+		final String s = "{[()()]}";
+		final int result = brackets.solution2(s);
+		assertEquals(result, 0);
+	}
+
+	@Test
+	public void solutionTest_3() {
+		final String s = "{[()()]}";
+		final int result = brackets.solution3(s);
+		assertEquals(result, 0);
+	}
 }

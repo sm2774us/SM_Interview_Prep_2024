@@ -16,9 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.codility.lessons.CountingElements.PermutationCheckTest;
 
 /**
- * https://app.codility.com/demo/results/trainingCEY5VM-9WC/
+ * https://app.codility.com/programmers/lessons/6-sorting/triangle/
  *
- * @author Sunil
+ * @author Shaikat
  *
  */
 @RunWith(SpringRunner.class)
@@ -53,24 +53,24 @@ public class TriangleTest {
 	}
 
 	@Test
-	public void solution1Test() {
-		int[] A = new int[5];
-		for (int i = 0; i < 5; i++) {
-			A[i] = i + 100;
-		}
-
+	public void solutionTest_1() {
+		int[] A = {10, 2, 5, 1, 8, 20};
 		int res = triangle.solution1(A);
 		assertEquals(res, 1);
+
+		A = new int[] {10, 50, 5, 1};
+		res = triangle.solution1(A);
+		assertEquals(res, 0);
 	}
 
 	@Test
-	public void solution2Test() {
-		int[] A = new int[5];
-		for (int i = 0; i < 5; i++) {
-			A[i] = i + 100;
-		}
-
+	public void solutionTest_2() {
+		int[] A = {10, 2, 5, 1, 8, 20};
 		int res = triangle.solution2(A);
 		assertEquals(res, 1);
+
+		A = new int[] {10, 50, 5, 1};
+		res = triangle.solution2(A);
+		assertEquals(res, 0);
 	}
 }

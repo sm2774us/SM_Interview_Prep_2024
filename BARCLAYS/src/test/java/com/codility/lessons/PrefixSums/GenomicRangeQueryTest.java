@@ -1,4 +1,4 @@
-package com.codility.lessons.Sorting;
+package com.codility.lessons.PrefixSums;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,27 +13,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.codility.lessons.CountingElements.PermutationCheckTest;
-
-/**
- * https://app.codility.com/programmers/lessons/6-sorting/distinct/
- * 
- * @author Shaikat
- *
- */
 @RunWith(SpringRunner.class)
-public class DistinctTest {
+public class GenomicRangeQueryTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(PermutationCheckTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(GenomicRangeQueryTest.class);
 
-	static Distinct distinct;
+	static GenomicRangeQuery genomicRangeQuery;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		distinct = new Distinct();
+		genomicRangeQuery = new GenomicRangeQuery();
 	}
 
 	static long start, end;
@@ -56,17 +48,22 @@ public class DistinctTest {
 	}
 
 	@Test
-	public void solutionTest_1() {
-		final int[] A = {2, 1, 1, 2, 3, 1};
-		final int res = distinct.solution1(A);
-		assertEquals(res, 3);
-	}
-
+    public void solutionTest_1() {
+        final String S = "CAGCCTA";
+		final int[] P = {2, 5, 0};
+		final int[] Q = {4, 5, 6};
+		final int[] expected = {2, 4, 1};
+		final int[] result = genomicRangeQuery.solution1(S, P, Q);
+		assertEquals(result, expected);
+    }
+    
 	@Test
-	public void solutionTest_2() {
-		final int[] A = {2, 1, 1, 2, 3, 1};
-		final int res = distinct.solution2(A);
-		assertEquals(res, 3);
+    public void solutionTest_2() {
+        final String S = "CAGCCTA";
+		final int[] P = {2, 5, 0};
+		final int[] Q = {4, 5, 6};
+		final int[] expected = {2, 4, 1};
+		final int[] result = genomicRangeQuery.solution2(S, P, Q);
+		assertEquals(result, expected);
 	}
-
 }
