@@ -1,8 +1,27 @@
 package com.codility.lessons.MaximumSliceProblem;
 
 public class MaxProfit {
-
-    public int solution(int[] A) {
+    /**
+     * Solution 1: One-Pass Solution using Math.min and Math.max
+     * @param A
+     * @return
+     */
+    public int solution1(int[] A) {
+        int maxProfit = 0;
+        int minPrice = Integer.MAX_VALUE;
+        for (int price : A) {
+            minPrice = Math.min(minPrice, price);
+            maxProfit = Math.max(maxProfit, price - minPrice);
+        }
+        return maxProfit;
+    }
+    
+    /**
+     * Solution 2: One-Pass Solution using smallest valley
+     * @param A
+     * @return
+     */
+    public int solution2(int[] A) {
         // main idea (One Pass Solution):
         // We can maintain two variables 
         // 1) minprice (key point~!!)

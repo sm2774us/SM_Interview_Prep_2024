@@ -16,8 +16,7 @@ public class MaxSliceSum {
         int maxEndingHere = A[0];
         int maxSoFar = A[0];
 
-        // note: for i=0, it will return A[0] (also for "one element" cases)  
-
+        // note: for i=0, it will return A[0] (also for "one element" cases)
         for (int i = 1; i < A.length; i++) {
             maxEndingHere = Math.max(A[i], maxEndingPrevious + A[i]); // <--- key point~!!
             maxEndingPrevious = maxEndingHere;

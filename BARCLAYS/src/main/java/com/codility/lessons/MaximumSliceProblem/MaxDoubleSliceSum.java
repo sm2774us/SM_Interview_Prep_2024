@@ -2,7 +2,46 @@ package com.codility.lessons.MaximumSliceProblem;
 
 public class MaxDoubleSliceSum {
 
-    public int solution(int[] A) {
+    public int solution1(int[] A) {
+        // (X, Y, Z)
+        // 1st slice: A[X+1] + ... + A[Y-1] 
+        // 2nd slice: A[Y+1] + ... + A[Z-1]
+        // Key Point:
+        // The array will be split at "Y" 
+
+        // main idea:
+        // if the middle point is "Y",
+        // find "maxLeft" and "maxRight"
+
+        // 1) find "maxLeft"
+        // maxLeft[i] is the maximum sum "contiguous subsequence" ending at index i 
+        // note: because it is "contiguous", we only need the ending index (important)
+		int[] maxLeftSums = new int[A.length];
+		int sum = 0;
+		for (int i = 1; i < A.length; i++) {
+			sum = Math.max(0, sum + A[i]);
+			maxLeftSums[i] = sum;
+		}
+
+        // 2) find "maxRight"
+        // maxRight[i] is the maximum sum "contiguous subsequence" starting at index i 
+        // note: because it is "contiguous", we only need the starting index (important)
+		int[] maxRightSums = new int[A.length];
+		sum = 0;
+		for (int i = A.length - 2; i >= 0; i--) {
+			sum = Math.max(0, sum + A[i]);
+			maxRightSums[i] = sum;
+		}
+
+        // 3) find the maximum of "maxLeft + maxRight"
+		int maxSum = 0;
+		for (int i = 1; i <= A.length - 2; i++) {
+			maxSum = Math.max(maxSum, maxLeftSums[i - 1] + maxRightSums[i + 1]);
+		}
+		return maxSum;
+	}
+
+    public int solution2(int[] A) {
 
         // (X, Y, Z)
         // 1st slice: A[X+1] + ... + A[Y-1] 

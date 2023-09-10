@@ -1,4 +1,4 @@
-package com.codility.lessons.Leader;
+package com.codility.lessons.MaximumSliceProblem;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,18 +14,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class EquiLeaderTest {
+public class MaxDoubleSliceSumTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(EquiLeaderTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(MaxDoubleSliceSumTest.class);
 
-	static EquiLeader equiLeader;
+	static MaxDoubleSliceSum maxDoubleSliceSum;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		equiLeader = new EquiLeader();
+		maxDoubleSliceSum = new MaxDoubleSliceSum();
 	}
 
 	static long start, end;
@@ -49,15 +49,15 @@ public class EquiLeaderTest {
 
 	@Test
     public void solutionTest_1() {
-        final int[] A = {4, 3, 4, 4, 4, 2};
-		final int result = equiLeader.solution1(A);
-		assertThat(result).isEqualTo(2);
+        final int[] A = {3, 2, 6, -1, 4, 5, -1, 2};
+		final int result = maxDoubleSliceSum.solution1(A);
+		assertThat(result).isEqualTo(17);
     }
     
 	@Test
     public void solutionTest_2() {
-        final int[] A = {4, 3, 4, 4, 4, 2};
-		final int result = equiLeader.solution2(A);
-		assertThat(result).isEqualTo(2);
+        final int[] A = {3, 2, 6, -1, 4, 5, -1, 2};
+		final int result = maxDoubleSliceSum.solution2(A);
+		assertThat(result).isEqualTo(17);
 	}
 }

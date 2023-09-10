@@ -1,4 +1,4 @@
-package com.codility.lessons.Leader;
+package com.codility.lessons.PrimeAndCompositeNumbers;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,18 +14,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class EquiLeaderTest {
+public class CountFactorsTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(EquiLeaderTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(CountFactorsTest.class);
 
-	static EquiLeader equiLeader;
+	static CountFactors countFactors;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		equiLeader = new EquiLeader();
+		countFactors = new CountFactors();
 	}
 
 	static long start, end;
@@ -48,16 +48,10 @@ public class EquiLeaderTest {
 	}
 
 	@Test
-    public void solutionTest_1() {
-        final int[] A = {4, 3, 4, 4, 4, 2};
-		final int result = equiLeader.solution1(A);
-		assertThat(result).isEqualTo(2);
+    public void solutionTest() {
+        final int N = 24;
+		final int result = countFactors.solution(N);
+		assertThat(result).isEqualTo(8);
     }
-    
-	@Test
-    public void solutionTest_2() {
-        final int[] A = {4, 3, 4, 4, 4, 2};
-		final int result = equiLeader.solution2(A);
-		assertThat(result).isEqualTo(2);
-	}
+
 }

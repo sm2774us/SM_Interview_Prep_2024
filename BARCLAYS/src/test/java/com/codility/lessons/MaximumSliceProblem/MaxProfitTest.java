@@ -1,4 +1,4 @@
-package com.codility.lessons.Leader;
+package com.codility.lessons.MaximumSliceProblem;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,18 +14,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class EquiLeaderTest {
+public class MaxProfitTest {
 
-	private static Logger LOG = LoggerFactory.getLogger(EquiLeaderTest.class);
+	private static Logger LOG = LoggerFactory.getLogger(MaxProfitTest.class);
 
-	static EquiLeader equiLeader;
+	static MaxProfit maxProfit;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		equiLeader = new EquiLeader();
+		maxProfit = new MaxProfit();
 	}
 
 	static long start, end;
@@ -49,15 +49,15 @@ public class EquiLeaderTest {
 
 	@Test
     public void solutionTest_1() {
-        final int[] A = {4, 3, 4, 4, 4, 2};
-		final int result = equiLeader.solution1(A);
-		assertThat(result).isEqualTo(2);
+        final int[] A = {23171, 21011, 21123, 21366, 21013, 21367};
+		final int result = maxProfit.solution1(A);
+		assertThat(result).isEqualTo(356);
     }
     
 	@Test
     public void solutionTest_2() {
-        final int[] A = {4, 3, 4, 4, 4, 2};
-		final int result = equiLeader.solution2(A);
-		assertThat(result).isEqualTo(2);
+        final int[] A = {23171, 21011, 21123, 21366, 21013, 21367};
+		final int result = maxProfit.solution2(A);
+		assertThat(result).isEqualTo(356);
 	}
 }
