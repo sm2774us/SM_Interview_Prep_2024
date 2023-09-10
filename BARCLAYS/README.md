@@ -71,9 +71,9 @@ length 3. The number 20 has binary representation 10100 and contains one
 binary gap of length 1. The number 15 has binary representation 1111 and
 has no binary gaps.
 
-``` java
 Write a function:
 
+``` java
 class Solution { public int solution(int N); }
 ```
 
@@ -85,11 +85,12 @@ For example, given N = 1041 the function should return 5, because N has
 binary representation 10000010001 and so its longest binary gap is of
 length 5.
 
-Assume that  
-N is an integer within the range \[1..2,147,483,647\].
+Assume that:
+- N is an integer within the range \[1..2,147,483,647\].
 
-Complexity: expected worst-case time complexity is O(log(N)); expected
-worst-case space complexity is O(1).
+Complexity:
+- expected worst-case time complexity is O(log(N));
+- expected worst-case space complexity is O(1).
 
 ```java
 // Bit-Wise Solution
@@ -314,11 +315,11 @@ Given:
 the function should return [1, 2, 3, 4]
 ```
 
-Assume that  
-N and K are integers within the range \[0..100\]; each element of array
-A is an integer within the range \[−1,000..1,000\]. In your solution,
-focus on correctness. The performance of your solution will not be the
-focus of the assessment.
+Assume that:
+- N and K are integers within the range \[0..100\]; each element of array
+- A is an integer within the range \[−1,000..1,000\].
+
+In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
 ```java
 package com.codility.lessons.Arrays;
@@ -327,9 +328,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
-/**
-
- */
 public class CyclicRotation {
 
     public static void main(String[] args) {
@@ -437,14 +435,14 @@ For example, given array A such that:
 
 the function should return 7, as explained in the example above.
 
-Assume that  
-N is an odd integer within the range \[1..1,000,000\]; each element of
-array A is an integer within the range \[1..1,000,000,000\]; all but one
-of the values in A occur an even number of times. Complexity:
+Assume that:
+- N is an odd integer within the range \[1..1,000,000\];
+- each element of array A is an integer within the range \[1..1,000,000,000\];
+- all but one of the values in A occur an even number of times
 
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(1), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -482,16 +480,15 @@ For example, given:
 the function should return 3, because the frog will be positioned as
 follows:
 
-after the first jump, at position 10 + 30 = 40 after the second jump, at
-position 10 + 30 + 30 = 70 after the third jump, at position 10 + 30 +
-30 + 30 = 100 Assume that::
+after the first jump, at position 10 + 30 = 40 after the second jump, at position 10 + 30 + 30 = 70 after the third jump, at position 10 + 30 + 30 + 30 = 100
 
-X, Y and D are integers within the range \[1..1,000,000,000\]; X ≤ Y.
+Assume that:
+- X, Y and D are integers within the range \[1..1,000,000,000\];
+- X ≤ Y.
 
 Complexity:
-
-expected worst-case time complexity is O(1); expected worst-case space
-complexity is O(1).
+- expected worst-case time complexity is O(1);
+- expected worst-case space complexity is O(1).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -521,14 +518,14 @@ For example, given array A such that:
 
 the function should return 4, as it is the missing element.
 
-Assume that  
-N is an integer within the range \[0..100,000\]; the elements of A are
-all distinct; each element of array A is an integer within the range
-\[1..(N + 1)\]. Complexity:
+Assume that:
+- N is an integer within the range \[0..100,000\];
+- the elements of A are all distinct;
+- each element of array A is an integer within the range \[1..(N + 1)\].
 
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(1), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -589,13 +586,13 @@ For example, given:
 
 the function should return 1, as explained above.
 
-Assume that  
-N is an integer within the range \[2..100,000\]; each element of array A
-is an integer within the range \[−1,000..1,000\]. Complexity:
+Assume that:
+- N is an integer within the range \[2..100,000\];
+- each element of array A is an integer within the range \[−1,000..1,000\].
 
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(N), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -722,7 +719,6 @@ Assume that
 - is an integer within the range \[1..1,000,000,000\].
 
 Complexity:
-
 - expected worst-case time complexity is O(N);
 - expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
@@ -1021,8 +1017,10 @@ that, given a zero-indexed array A consisting of N integers, returns the
 number of distinct values in array A.
 
 Assume that  
-N is an integer within the range \[0..100,000\]; each element of array A
-is an integer within the range \[−1,000,000..1,000,000\]. For example,
+- N is an integer within the range \[0..100,000\];
+- each element of array A is an integer within the range \[−1,000,000..1,000,000\].
+
+For example,
 given array A consisting of six elements such that:
 
 ``` java
@@ -1035,9 +1033,8 @@ appearing in array A, namely 1, 2 and 3.
 
 Complexity:
 
-expected worst-case time complexity is O(N\*log(N)); expected worst-case
-space complexity is O(N), beyond input storage (not counting the storage
-required for input arguments).
+- expected worst-case time complexity is O(N\*log(N));
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1090,16 +1087,15 @@ For example, given array A such that:
   A[5] = 6
 ```
 
-the function should return 60, as the product of triplet (2, 4, 5) is
-maximal.
+the function should return 60, as the product of triplet (2, 4, 5) is maximal.
 
-Assume that  
-N is an integer within the range \[3..100,000\]; each element of array A
-is an integer within the range \[−1,000..1,000\]. Complexity:
+Assume that:
+- N is an integer within the range \[3..100,000\];
+- each element of array A is an integer within the range \[−1,000..1,000\].
 
-expected worst-case time complexity is O(N\*log(N)); expected worst-case
-space complexity is O(1), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
+- expected worst-case time complexity is O(N\*log(N));
+- expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1107,8 +1103,7 @@ required for input arguments).
 
 Determine whether a triangle can be built from a given set of edges.
 
-A zero-indexed array A consisting of N integers is given. A triplet (P,
-Q, R) is triangular if 0 ≤ P \< Q \< R \< N and:
+A zero-indexed array A consisting of N integers is given. A triplet (P, Q, R) is triangular if 0 ≤ P \< Q \< R \< N and:
 
 ``` java
 A[P] + A[Q] > A[R],
@@ -1131,9 +1126,7 @@ Write a function:
 class Solution { public int solution(int[] A); }
 ```
 
-that, given a zero-indexed array A consisting of N integers, returns 1
-if there exists a triangular triplet for this array and returns 0
-otherwise.
+that, given a zero-indexed array A consisting of N integers, returns 1 if there exists a triangular triplet for this array and returns 0 otherwise.
 
 For example, given array A such that:
 
@@ -1142,8 +1135,7 @@ For example, given array A such that:
   A[3] = 1     A[4] = 8    A[5] = 20
 ```
 
-the function should return 1, as explained above. Given array A such
-that:
+the function should return 1, as explained above. Given array A such that:
 
 ``` java
   A[0] = 10    A[1] = 50    A[2] = 5
@@ -1152,14 +1144,13 @@ that:
 
 the function should return 0.
 
-Assume that  
-N is an integer within the range \[0..100,000\]; each element of array A
-is an integer within the range \[−2,147,483,648..2,147,483,647\].
-Complexity:
+Assume that:
+- N is an integer within the range \[0..100,000\];
+- each element of array A is an integer within the range \[−2,147,483,648..2,147,483,647\].
 
-expected worst-case time complexity is O(N\*log(N)); expected worst-case
-space complexity is O(N), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
+- expected worst-case time complexity is O(N\*log(N));
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1196,20 +1187,17 @@ disc 2 also intersects with discs 0 and 3. Write a function:
 class Solution { public int solution(int[] A); }
 ```
 
-that, given an array A describing N discs as explained above, returns
-the number of (unordered) pairs of intersecting discs. The function
-should return −1 if the number of intersecting pairs exceeds 10,000,000.
+that, given an array A describing N discs as explained above, returns the number of (unordered) pairs of intersecting discs. The function should return −1 if the number of intersecting pairs exceeds 10,000,000.
 
-Given array A shown above, the function should return 11, as explained
-above.
+Given array A shown above, the function should return 11, as explained above.
 
-Assume that  
-N is an integer within the range \[0..100,000\]; each element of array A
-is an integer within the range \[0..2,147,483,647\]. Complexity:
+Assume that:
+- N is an integer within the range \[0..100,000\];
+- each element of array A is an integer within the range \[0..2,147,483,647\].
 
-expected worst-case time complexity is O(N\*log(N)); expected worst-case
-space complexity is O(N), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
+- expected worst-case time complexity is O(N\*log(N));
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1234,20 +1222,17 @@ Write a function:
 class Solution { public int solution(String S); }
 ```
 
-that, given a string S consisting of N characters, returns 1 if S is
-properly nested and 0 otherwise.
+that, given a string S consisting of N characters, returns 1 if S is properly nested and 0 otherwise.
 
-For example, given S = "{\[()()\]}", the function should return 1 and
-given S = "(\[)()\]", the function should return 0, as explained above.
+For example, given S = "{\[()()\]}", the function should return 1 and given S = "(\[)()\]", the function should return 0, as explained above.
 
-Assume that  
-N is an integer within the range \[0..200,000\]; string S consists only
-of the following characters: "(", "{", "\[", "\]", "}" and/or ")".
+Assume that:
+- N is an integer within the range \[0..200,000\];
+- string S consists only of the following characters: "(", "{", "\[", "\]", "}" and/or ")".
 
-Complexity  
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(N) (not counting the storage required for input
-arguments).
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1316,21 +1301,17 @@ Write a function:
 class Solution { public int solution(String S); }
 ```
 
-that, given a string S consisting of N characters, returns 1 if string S
-is properly nested and 0 otherwise.
+that, given a string S consisting of N characters, returns 1 if string S is properly nested and 0 otherwise.
 
-For example, given S = "<span class="indexterm"></span>)((())", the
-function should return 1 and given S = "())", the function should return
-0, as explained above.
+For example, given S = "<span class="indexterm"></span>)((())", the function should return 1 and given S = "())", the function should return 0, as explained above.
 
-Assume that  
-N is an integer within the range \[0..1,000,000\]; string S consists
-only of the characters "(" and/or ")".
+Assume that:
+- N is an integer within the range \[0..1,000,000\];
+- string S consists only of the characters "(" and/or ")".
 
-Complexity  
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(1) (not counting the storage required for input
-arguments).
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(1) (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1367,17 +1348,15 @@ For example, given array H containing N = 9 integers:
   H[6] = 7    H[7] = 4    H[8] = 8
 ```
 
-the function should return 7. The figure shows one possible arrangement
-of seven blocks.
+the function should return 7. The figure shows one possible arrangement of seven blocks.
 
-Assume that  
-N is an integer within the range \[1..100,000\]; each element of array H
-is an integer within the range \[1..1,000,000,000\].
+Assume that:  
+- N is an integer within the range \[1..100,000\];
+- each element of array H is an integer within the range \[1..1,000,000,000\].
 
-Complexity  
-expected worst-case time complexity is O(N); expected worst-case space
-complexity is O(N), beyond input storage (not counting the storage
-required for input arguments).
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1861,9 +1840,108 @@ Complexity:
 
 ##### [Count Non Divisible](./src/main/java/com/codility/lessons/SieveOfEratosthenes/CountNonDivisible.java)
 
+You are given an array A consisting of N integers.
+
+For each number A[i] such that 0 ≤ i < N, we want to count the number of elements of the array that are not the divisors of A[i]. We say that these elements are non-divisors.
+
+For example, consider integer N = 5 and array A such that:
+
+```java
+    A[0] = 3
+    A[1] = 1
+    A[2] = 2
+    A[3] = 3
+    A[4] = 6
+```
+
+For the following elements:
+
+- A[0] = 3, the non-divisors are: 2, 6,
+- A[1] = 1, the non-divisors are: 3, 2, 3, 6,
+- A[2] = 2, the non-divisors are: 3, 3, 6,
+- A[3] = 3, the non-divisors are: 2, 6,
+- A[4] = 6, there aren't any non-divisors.
+
+Write a function:
+
+```java
+class Solution { public int[] solution(int[] A); }
+```
+
+that, given an array A consisting of N integers, returns a sequence of integers representing the amount of non-divisors.
+
+Result array should be returned as an array of integers.
+
+For example, given:
+
+```java
+    A[0] = 3
+    A[1] = 1
+    A[2] = 2
+    A[3] = 3
+    A[4] = 6
+```
+
+the function should return [2, 4, 3, 2, 0], as explained above.
+
+Write an efficient algorithm for the following assumptions:
+- N is an integer within the range [1..50,000];
+- each element of array A is an integer within the range [1..2 * N].
+
+Complexity:
+- expected worst-case time complexity is O(N*log(N));
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments). Elements of input arrays can be modified.
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Count Semiprimes](./src/main/java/com/codility/lessons/SieveOfEratosthenes/CountSemiprimes.java)
+
+A prime is a positive integer X that has exactly two distinct divisors: 1 and X. The first few prime integers are 2, 3, 5, 7, 11 and 13.
+
+A semiprime is a natural number that is the product of two (not necessarily distinct) prime numbers. The first few semiprimes are 4, 6, 9, 10, 14, 15, 21, 22, 25, 26.
+
+You are given two non-empty arrays P and Q, each consisting of M integers. These arrays represent queries about the number of semiprimes within specified ranges.
+
+Query K requires you to find the number of semiprimes within the range (P[K], Q[K]), where 1 ≤ P[K] ≤ Q[K] ≤ N.
+
+For example, consider an integer N = 26 and arrays P, Q such that:
+
+```java
+    P[0] = 1    Q[0] = 26
+    P[1] = 4    Q[1] = 10
+    P[2] = 16   Q[2] = 20
+```
+
+The number of semiprimes within each of these ranges is as follows:
+
+- (1, 26) is 10,
+- (4, 10) is 4,
+- (16, 20) is 0.
+
+Write a function:
+
+```java
+class Solution { public int[] solution(int N, int[] P, int[] Q); }
+```
+
+that, given an integer N and two non-empty arrays P and Q consisting of M integers, returns an array consisting of M elements specifying the consecutive answers to all the queries.
+
+For example, given an integer N = 26 and arrays P, Q such that:
+
+```java
+    P[0] = 1    Q[0] = 26
+    P[1] = 4    Q[1] = 10
+    P[2] = 16   Q[2] = 20
+```
+
+the function should return the values [10, 4, 0], as explained above.
+
+Write an efficient algorithm for the following assumptions:
+
+- N is an integer within the range [1..50,000];
+- M is an integer within the range [1..30,000];
+- each element of arrays P and Q is an integer within the range [1..N];
+- P[i] ≤ Q[i].
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1873,9 +1951,78 @@ Complexity:
 
 ##### [Chocolates By Numbers](./src/main/java/com/codility/lessons/EuclideanAlgorithm/ChocolatesByNumbers.java)
 
+Two positive integers N and M are given. Integer N represents the number of chocolates arranged in a circle, numbered from 0 to N − 1.
+
+You start to eat the chocolates. After eating a chocolate you leave only a wrapper.
+
+You begin with eating chocolate number 0. Then you omit the next M − 1 chocolates or wrappers on the circle, and eat the following one.
+
+More precisely, if you ate chocolate number X, then you will next eat the chocolate with number (X + M) modulo N (remainder of division).
+
+You stop eating when you encounter an empty wrapper.
+
+For example, given integers N = 10 and M = 4. You will eat the following chocolates: 0, 4, 8, 2, 6.
+
+The goal is to count the number of chocolates that you will eat, following the above rules.
+
+Write a function:
+
+```java
+class Solution { public int solution(int N, int M); }
+```
+
+that, given two positive integers N and M, returns the number of chocolates that you will eat.
+
+For example, given integers N = 10 and M = 4. the function should return 5, as explained above.
+
+Write an efficient algorithm for the following assumptions:
+- N and M are integers within the range [1..1,000,000,000].
+
+Complexity:
+- expected worst-case time complexity is O(log(N+M));
+- expected worst-case space complexity is O(log(N+M)).
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Common Prime Divisors](./src/main/java/com/codility/lessons/EuclideanAlgorithm/CommonPrimeDivisors.java)
+
+A prime is a positive integer X that has exactly two distinct divisors: 1 and X. The first few prime integers are 2, 3, 5, 7, 11 and 13.
+
+A prime D is called a prime divisor of a positive integer P if there exists a positive integer K such that D * K = P. For example, 2 and 5 are prime divisors of 20.
+
+You are given two positive integers N and M. The goal is to check whether the sets of prime divisors of integers N and M are exactly the same.
+
+For example, given:
+
+- N = 15 and M = 75, the prime divisors are the same: {3, 5};
+- N = 10 and M = 30, the prime divisors aren't the same: {2, 5} is not equal to {2, 3, 5};
+- N = 9 and M = 5, the prime divisors aren't the same: {3} is not equal to {5}.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A, int[] B); }
+```
+
+that, given two non-empty arrays A and B of Z integers, returns the number of positions K for which the prime divisors of A[K] and B[K] are exactly the same.
+
+For example, given:
+
+```java
+    A[0] = 15   B[0] = 75
+    A[1] = 10   B[1] = 30
+    A[2] = 3    B[2] = 5
+```
+
+the function should return 1, because only one pair (15, 75) has the same set of prime divisors.
+
+Write an *efficient* algorithm for the following assumptions:
+- Z is an integer within the range [1..6,000];
+- each element of arrays A and B is an integer within the range [1..2,147,483,647].
+
+Complexity:
+- expected worst-case time complexity is O(Z*log(max(A)+max(B))2);
+- expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments). Elements of input arrays can be modified.
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1885,9 +2032,138 @@ Complexity:
 
 ##### [Fibonacci Frog](./src/main/java/com/codility/lessons/FibonacciNumbers/FibFrog.java)
 
+The Fibonacci sequence is defined using the following recursive formula:
+
+```java
+    F(0) = 0
+    F(1) = 1
+    F(M) = F(M - 1) + F(M - 2) if M >= 2
+```
+
+A small frog wants to get to the other side of a river. The frog is initially located at one bank of the river (position −1) and wants to get to the other bank (position N). The frog can jump over any distance F(K), where F(K) is the K-th Fibonacci number. Luckily, there are many leaves on the river, and the frog can jump between the leaves, but only in the direction of the bank at position N.
+
+The leaves on the river are represented in an array A consisting of N integers. Consecutive elements of array A represent consecutive positions from 0 to N − 1 on the river. Array A contains only 0s and/or 1s:
+
+- 0 represents a position without a leaf;
+- 1 represents a position containing a leaf.
+
+The goal is to count the minimum number of jumps in which the frog can get to the other side of the river (from position −1 to position N). The frog can jump between positions −1 and N (the banks of the river) and every position containing a leaf.
+
+For example, consider array A such that:
+
+```java
+    A[0] = 0
+    A[1] = 0
+    A[2] = 0
+    A[3] = 1
+    A[4] = 1
+    A[5] = 0
+    A[6] = 1
+    A[7] = 0
+    A[8] = 0
+    A[9] = 0
+    A[10] = 0
+```
+
+The frog can make three jumps of length F(5) = 5, F(3) = 2 and F(5) = 5.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array A consisting of N integers, returns the minimum number of jumps by which the frog can get to the other side of the river. If the frog cannot reach the other side of the river, the function should return −1.
+
+For example, given:
+
+```java
+    A[0] = 0
+    A[1] = 0
+    A[2] = 0
+    A[3] = 1
+    A[4] = 1
+    A[5] = 0
+    A[6] = 1
+    A[7] = 0
+    A[8] = 0
+    A[9] = 0
+    A[10] = 0
+```
+
+the function should return 3, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+- N is an integer within the range [0..100,000];
+- each element of array A is an integer that can have one of the following values: 0, 1.
+
+Complexity:
+- expected worst-case time complexity is O(N*log(N));
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
+- Elements of input arrays can be modified.
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Ladder](./src/main/java/com/codility/lessons/FibonacciNumbers/Ladder.java)
+
+You have to climb up a ladder. The ladder has exactly N rungs, numbered from 1 to N. With each step, you can ascend by one or two rungs. More precisely:
+
+- with your first step you can stand on rung 1 or 2,
+- if you are on rung K, you can move to rungs K + 1 or K + 2,
+- finally you have to stand on rung N.
+
+Your task is to count the number of different ways of climbing to the top of the ladder.
+
+For example, given N = 4, you have five different ways of climbing, ascending by:
+
+- 1, 1, 1 and 1 rung,
+- 1, 1 and 2 rungs,
+- 1, 2 and 1 rung,
+- 2, 1 and 1 rungs, and
+- 2 and 2 rungs.
+
+Given N = 5, you have eight different ways of climbing, ascending by:
+
+- 1, 1, 1, 1 and 1 rung,
+- 1, 1, 1 and 2 rungs,
+- 1, 1, 2 and 1 rung,
+- 1, 2, 1 and 1 rung,
+- 1, 2 and 2 rungs,
+- 2, 1, 1 and 1 rungs,
+- 2, 1 and 2 rungs, and
+- 2, 2 and 1 rung.
+
+The number of different ways can be very large, so it is sufficient to return the result modulo 2P, for a given integer P.
+
+Write a function:
+
+```java
+class Solution { public int[] solution(int[] A, int[] B); }
+```
+
+that, given two non-empty arrays A and B of L integers, returns an array consisting of L integers specifying the consecutive answers; position I should contain the number of different ways of climbing the ladder with A[I] rungs modulo 2B[I].
+
+For example, given L = 5 and:
+
+```java
+    A[0] = 4   B[0] = 3
+    A[1] = 4   B[1] = 2
+    A[2] = 5   B[2] = 4
+    A[3] = 5   B[3] = 3
+    A[4] = 1   B[4] = 1
+```
+
+the function should return the sequence [5, 1, 8, 0, 1], as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+- L is an integer within the range [1..50,000];
+- each element of array A is an integer within the range [1..L];
+- each element of array B is an integer within the range [1..30].
+
+Complexity:
+- expected worst-case time complexity is O(L);
+- expected worst-case space complexity is O(L), beyond input storage (not counting the storage required for input arguments).
+- Elements of input arrays can be modified.
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -1897,9 +2173,141 @@ Complexity:
 
 ##### [Min Max Division](./src/main/java/com/codility/lessons/BinarySearchAlgorithm/MinMaxDivision.java)
 
+You are given integers K, M and a non-empty array A consisting of N integers. Every element of the array is not greater than M.
+
+You should divide this array into K blocks of consecutive elements. The size of the block is any integer between 0 and N. Every element of the array should belong to some block.
+
+The sum of the block from X to Y equals A[X] + A[X + 1] + ... + A[Y]. The sum of empty block equals 0.
+
+The `large sum` is the maximal sum of any block.
+
+For example, you are given integers K = 3, M = 5 and array A such that:
+
+```java
+  A[0] = 2
+  A[1] = 1
+  A[2] = 5
+  A[3] = 1
+  A[4] = 2
+  A[5] = 2
+  A[6] = 2
+```
+
+The array can be divided, for example, into the following blocks:
+- [2, 1, 5, 1, 2, 2, 2], [], [] with a large sum of 15;
+- [2], [1, 5, 1, 2], [2, 2] with a large sum of 9;
+- [2, 1, 5], [], [1, 2, 2, 2] with a large sum of 8;
+- [2, 1], [5, 1], [2, 2, 2] with a large sum of 6.
+
+The goal is to minimize the large sum. In the above example, 6 is the minimal large sum.
+
+Write a function:
+
+class Solution { public int solution(int K, int M, int[] A); }
+
+that, given integers K, M and a non-empty array A consisting of N integers, returns the minimal large sum.
+
+For example, given K = 3, M = 5 and array A such that:
+
+```java
+  A[0] = 2
+  A[1] = 1
+  A[2] = 5
+  A[3] = 1
+  A[4] = 2
+  A[5] = 2
+  A[6] = 2
+```
+
+the function should return 6, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+- N and K are integers within the range [1..100,000];
+- M is an integer within the range [0..10,000];
+- each element of array A is an integer within the range [0..M].
+
+Complexity:
+- expected worst-case time complexity is O(N*log(N+M));
+- expected worst-case space complexity is O(1), beyond input storage (not counting the storage required for input arguments).
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Nailing Planks](./src/main/java/com/codility/lessons/BinarySearchAlgorithm/NailingPlanks.java)
+
+You are given two non-empty arrays A and B consisting of N integers. These arrays represent N planks. More precisely, A[K] is the start and B[K] the end of the K−th plank.
+
+Next, you are given a non-empty array C consisting of M integers. This array represents M nails. More precisely, C[I] is the position where you can hammer in the I−th nail.
+
+We say that a plank (A[K], B[K]) is nailed if there exists a nail C[I] such that A[K] ≤ C[I] ≤ B[K].
+
+The goal is to find the minimum number of nails that must be used until all the planks are nailed. In other words, you should find a value J such that all planks will be nailed after using only the first J nails. More precisely, for every plank (A[K], B[K]) such that 0 ≤ K < N, there should exist a nail C[I] such that I < J and A[K] ≤ C[I] ≤ B[K].
+
+For example, given arrays A, B such that:
+
+```java
+    A[0] = 1    B[0] = 4
+    A[1] = 4    B[1] = 5
+    A[2] = 5    B[2] = 9
+    A[3] = 8    B[3] = 10
+```
+
+four planks are represented: [1, 4], [4, 5], [5, 9] and [8, 10].
+
+Given array C such that:
+
+```java
+    C[0] = 4
+    C[1] = 6
+    C[2] = 7
+    C[3] = 10
+    C[4] = 2
+```
+
+if we use the following nails:
+
+- 0, then planks [1, 4] and [4, 5] will both be nailed.
+- 0, 1, then planks [1, 4], [4, 5] and [5, 9] will be nailed.
+- 0, 1, 2, then planks [1, 4], [4, 5] and [5, 9] will be nailed.
+- 0, 1, 2, 3, then all the planks will be nailed.
+
+Thus, four is the minimum number of nails that, used sequentially, allow all the planks to be nailed.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A, int[] B, int[] C); }
+```
+
+that, given two non-empty arrays A and B consisting of N integers and a non-empty array C consisting of M integers, returns the minimum number of nails that, used sequentially, allow all the planks to be nailed.
+
+If it is not possible to nail all the planks, the function should return −1.
+
+For example, given arrays A, B, C such that:
+
+```java
+    A[0] = 1    B[0] = 4
+    A[1] = 4    B[1] = 5
+    A[2] = 5    B[2] = 9
+    A[3] = 8    B[3] = 10
+
+    C[0] = 4
+    C[1] = 6
+    C[2] = 7
+    C[3] = 10
+    C[4] = 2
+```
+
+the function should return 4, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+- N and M are integers within the range [1..30,000];
+- each element of arrays A, B and C is an integer within the range [1..2*M];
+- A[K] ≤ B[K].
+
+Complexity:
+- expected worst-case time complexity is O((N+M)*log(M));
+- expected worst-case space complexity is O(M), beyond input storage (not counting the storage required for input arguments).
+- Elements of input arrays can be modified.
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
