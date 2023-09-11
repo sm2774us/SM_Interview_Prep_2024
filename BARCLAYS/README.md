@@ -69,6 +69,15 @@
    - 1.17.1   [Number Solitaire](#number-solitaire)
    - 1.17.2   [Min Absolute Sum](#min-absolute-sum)
 
+2. [BARCLAYS INTERVIEW QUESTIONS 2015](#barclays-interview-questions-2015)
+ - 2.1   [Single Swap Increasing Order Array](#single-swap-increasing-order-array)
+ - 2.2   [Longest Increasing Sequence Diff](#longest-increasing-sequence-diff)
+ - 2.3   [Heads Tails Adjacency](#heads-tails-adjacency)
+
+3. [BARCLAYS INTERVIEW QUESTIONS 2023](#barclays-interview-questions-2023)
+ - 3.1   [Slope Of A Number](#slope-of-a-number)
+ - 3.2   [Move All Zeros To End Of Array](#move-all-zeros-to-end-of-array)
+
 #### Build Instructions
 
 ##### Pre-requisites
@@ -2750,5 +2759,77 @@ your function should return 0, since for S = [−1, 1, −1, 1], val(A, S) = 0, 
 Write an efficient algorithm for the following assumptions:
 - N is an integer within the range [0..20,000];
 - each element of array A is an integer within the range [−100..100].
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+#### BARCLAYS INTERVIEW QUESTIONS 2015
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Min Absolute Sum](./src/main/java/com/codility/lessons/DynamicProgramming/MinAbsSum.java)
+
+##### [Single Swap Increasing Order Array](./src/main/java/com/codility/lessons/Barclays2015/SingleSwapIncreasingOrderArray.java)
+
+You have given an array. You have to find out if we can make this array in increasing order by making one swap or not.
+
+[1,2,5,4,6,7] == true
+
+[2,4,5,7,8,6,5] == false
+
+##### [Longest Increasing Sequence Diff](./src/main/java/com/codility/lessons/Barclays2015/LongestIncreasingSequenceDiff.java)
+
+You have given an array and you have to find out maximum sub sequence where difference of largest number and smallest number should not be greater than 1.
+
+[6,8,6,7,9] == [6,6,7]
+
+##### [Heads Tails Adjacency](./src/main/java/com/codility/lessons/Barclays2015/HeadsTailsAdjacency.java)
+
+We have certain coins in an array which are either 1 or 0.Adjacency means how many pairs have similar number.
+
+[1,1,1] == Here it’s 2 as three pair can be formed [index0,index1] [index1,index2]
+
+[1,1,0,0,0] == here it’s 3 [1,1] [0,0] [0,0]
+
+In this we can do at most one reverse. So we have to calculate maximum adjacency after that reversal.
+
+[1,1,0,1] == so here if we make 0 -> 1 adjacency will be 3.
+
+#### BARCLAYS INTERVIEW QUESTIONS 2023
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Slope Of A Number](./src/main/java/com/codility/lessons/Barclays2023/SlopeOfANumber.java)
+
+Slope of a number is the count of the minimaand maxima digits in it. A digit is called a minima if the digit is lesser than the digitbefore and after it. Similarly a digit is called a maxima if the digit is greater than thedigit before and after it.
+
+Examples:
+ 
+Input  : 1213321
+Output : 2
+
+1*21*3321- The highlighted digit '2' is a maxima and highlighted digit '1' is a minima.
+
+Input  : 273299302236131
+Output : 6
+
+Approach:
+
+ Traverse the digits of the given number from the 2nd digit up to the 2nd lastdigit. For each digit check whether the digit is greater or smaller than digits before andafter it. Get the count of such digits.
+ 
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Move All Zeros To End Of Array](./src/main/java/com/codility/lessons/Barclays2023/MoveAllZerosToEndOfArray.java)
+
+Given an array of random numbers, Push all the zero’s of a given array to the end of the array. For example, if the given arrays is {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0}, it should be changed to {1, 9, 8, 4, 2, 7, 6, 0, 0, 0, 0}. The order of all other elements should be same. Expected time complexity is O(n) and extra space is O(1).
+
+Example:
+
+```
+Input :  arr[] = {1, 2, 0, 4, 3, 0, 5, 0};
+Output : arr[] = {1, 2, 4, 3, 5, 0, 0, 0};
+
+Input : arr[]  = {1, 2, 0, 0, 0, 3, 6};
+Output : arr[] = {1, 2, 3, 6, 0, 0, 0};
+```
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
