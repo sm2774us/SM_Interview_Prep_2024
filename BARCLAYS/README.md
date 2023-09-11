@@ -46,12 +46,28 @@
    - 1.10.3   [Flags](#flags)
    - 1.10.4   [Peaks](#peaks)
  - 1.11   [Lesson 11: Sieve of Eratosthenes](#sieve-of-eratosthenes)
+   - 1.11.1   [Count Non Divisible](#count-non-divisible)
+   - 1.11.2   [Count Semiprimes](#count-semiprimes)
  - 1.12   [Lesson 12: Euclidean Algorithm](#euclidean-algorithm)
+   - 1.12.1   [Chocolates By Numbers](#chocolates-by-numbers)
+   - 1.12.2   [Common Prime Divisors](#common-prime-divisors)
  - 1.13   [Lesson 13: Fibonacci Numbers](#fibonacci-numbers)
+   - 1.13.1   [Fibonacci Frog](#fibonacci-frog)
+   - 1.13.2   [Ladder](#ladder)
  - 1.14   [Lesson 14: Binary Search Algorithm](#binary-search-algorithm)
+   - 1.14.1   [Min Max Division](#min-max-division)
+   - 1.14.2   [Nailing Planks](#nailing-planks)
  - 1.15   [Lesson 15: Caterpillar Method](#caterpillar-method)
+   - 1.15.1   [Absolute Distinct](#absolute-distinct)
+   - 1.15.2   [Count Distinct Slices](#count-distinct-slices)
+   - 1.15.3   [Count Triangles](#count-triangles)
+   - 1.15.4   [Min Absolute Sum Of Two](#min-absolute-sum-of-two)
  - 1.16   [Lesson 16: Greedy Algorithms](#greedy-algorithms)
+   - 1.16.1   [Max Nonoverlapping Segments](#max-nonoverlapping-segments)
+   - 1.16.2   [Tie Ropes](#tie-ropes)
  - 1.17   [Lesson 17: Dynamic Programming](#dynamic-programming)
+   - 1.17.1   [Number Solitaire](#number-solitaire)
+   - 1.17.2   [Min Absolute Sum](#min-absolute-sum)
 
 #### Build Instructions
 
@@ -65,7 +81,9 @@ mvn -B clean test
 ```
 
 ##### How to view the test report
+```bash
 mvn surefire-report:report-only
+```
 
 #### [Lesson 1: Iterations](./src/main/java/com/codility/lessons/BinaryGap)
 
