@@ -9,9 +9,9 @@ public class Brackets {
         return false;
     }
     
-	private char getCorrespondingOpenBracket(char closeBracket, String openBrackets, String closeBrackets) {
-		return openBrackets.charAt(closeBrackets.indexOf(closeBracket));
-
+    private char getCorrespondingOpenBracket(char closeBracket, String openBrackets, String closeBrackets) {
+        return openBrackets.charAt(closeBrackets.indexOf(closeBracket));
+    }
 
 	public int solution1(String S) {
 		String openBrackets = "{[(";

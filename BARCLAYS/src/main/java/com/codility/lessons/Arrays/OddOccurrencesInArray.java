@@ -51,14 +51,15 @@ public class OddOccurrencesInArray {
         return set.iterator().next();
     }
 	
-	public static void main(String[] args) {
+    public static void main(String[] args) {
+        OddOccurrencesInArray oddOccurrencesInArray = new OddOccurrencesInArray();
 		int[] A = {9,3,9,3,9,7,9};
 		
-		int res = solution1(A);
-		System.out.println(" res===>"+res);
+		int result1 = oddOccurrencesInArray.solution1(A);
+		System.out.println("result1--->"+result1);
 
-		int res = solution2(A);
-		System.out.println(" res===>"+res);
+		int result2 = oddOccurrencesInArray.solution2(A);
+		System.out.println("result2--->"+result2);
 	}
 
 }

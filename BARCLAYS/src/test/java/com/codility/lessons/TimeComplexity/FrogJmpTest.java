@@ -52,7 +52,7 @@ public class FrogJmpTest {
         final int d = 30;
 
         // when
-        final int[] result = frogJmp.solution1(x, y, d);
+        final int result = frogJmp.solution1(x, y, d);
 
         // then
         assertThat(result).isEqualTo(3);
@@ -66,7 +66,7 @@ public class FrogJmpTest {
         final int d = 30;
 
         // when
-        final int[] result = frogJmp.solution2(x, y, d);
+        final int result = frogJmp.solution2(x, y, d);
 
         // then
         assertThat(result).isEqualTo(3);

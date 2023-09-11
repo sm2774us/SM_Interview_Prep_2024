@@ -1,6 +1,6 @@
 package com.codility.lessons.StacksQueues;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.After;
 import org.junit.Before;
@@ -51,20 +51,20 @@ public class BracketsTest {
 	public void solutionTest_1() {
 		final String s = "{[()()]}";
 		final int result = brackets.solution1(s);
-		assertEquals(result, 0);
+		assertThat(result).isEqualTo(1);
 	}
 
 	@Test
 	public void solutionTest_2() {
 		final String s = "{[()()]}";
 		final int result = brackets.solution2(s);
-		assertEquals(result, 0);
+		assertThat(result).isEqualTo(1);
 	}
 
 	@Test
 	public void solutionTest_3() {
 		final String s = "{[()()]}";
 		final int result = brackets.solution3(s);
-		assertEquals(result, 0);
+		assertThat(result).isEqualTo(1);
 	}
 }

@@ -2,7 +2,8 @@
 
 ## Table Of Contents <a name="top"></a>
 
-1. [BARCLAYS](#barclays)  
+1. [BARCLAYS](#barclays)
+ - 1.0   [Build Instructions](#build-instructions)
  - 1.1   [Lesson 1: Iterations](#lesson-1-iterations)
    - 1.1.1   [Binary Gap](#binary-gap)
  - 1.2   [Lesson 2: Arrays](#lesson-2-arrays)
@@ -51,6 +52,20 @@
  - 1.15   [Lesson 15: Caterpillar Method](#caterpillar-method)
  - 1.16   [Lesson 16: Greedy Algorithms](#greedy-algorithms)
  - 1.17   [Lesson 17: Dynamic Programming](#dynamic-programming)
+
+#### Build Instructions
+
+##### Pre-requisites
+- Must have JDK8 pre-installed.
+- pom.xml uses the environment variable `JAVA_1_8_HOME` for resolving the JDK8 parent directory
+
+##### How to compile and run the test
+```bash
+mvn -B clean test
+```
+
+##### How to view the test report
+mvn surefire-report:report-only
 
 #### [Lesson 1: Iterations](./src/main/java/com/codility/lessons/BinaryGap)
 
@@ -2317,17 +2332,195 @@ Complexity:
 
 ##### [Absolute Distinct](./src/main/java/com/codility/lessons/CaterpillarMethod/AbsDistinct.java)
 
+A non-empty array A consisting of N numbers is given. The array is sorted in non-decreasing order. The absolute distinct count of this array is the number of distinct absolute values among the elements of the array.
+
+For example, consider array A such that:
+
+```java
+  A[0] = -5
+  A[1] = -3
+  A[2] = -1
+  A[3] =  0
+  A[4] =  3
+  A[5] =  6
+```
+
+The absolute distinct count of this array is 5, because there are 5 distinct absolute values among the elements of this array, namely 0, 1, 3, 5 and 6.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty array A consisting of N numbers, returns absolute distinct count of array A.
+
+For example, given array A such that:
+
+```java
+  A[0] = -5
+  A[1] = -3
+  A[2] = -1
+  A[3] =  0
+  A[4] =  3
+  A[5] =  6
+```
+
+the function should return 5, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- N is an integer within the range [1..100,000];
+- each element of array A is an integer within the range [−2,147,483,648..2,147,483,647];
+- array A is sorted in non-decreasing order.
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Count Distinct Slices](./src/main/java/com/codility/lessons/CaterpillarMethod/CountDistinctSlices.java)
+
+An integer M and a non-empty array A consisting of N non-negative integers are given. All integers in array A are less than or equal to M.
+
+A pair of integers (P, Q), such that 0 ≤ P ≤ Q < N, is called a slice of array A. The slice consists of the elements A[P], A[P + 1], ..., A[Q]. A distinct slice is a slice consisting of only unique numbers. That is, no individual number occurs more than once in the slice.
+
+For example, consider integer M = 6 and array A such that:
+
+```java
+    A[0] = 3
+    A[1] = 4
+    A[2] = 5
+    A[3] = 5
+    A[4] = 2
+```
+
+There are exactly nine distinct slices: (0, 0), (0, 1), (0, 2), (1, 1), (1, 2), (2, 2), (3, 3), (3, 4) and (4, 4).
+
+The goal is to calculate the number of distinct slices.
+
+Write a function:
+
+```java
+class Solution { public int solution(int M, int[] A); }
+```
+
+that, given an integer M and a non-empty array A consisting of N integers, returns the number of distinct slices.
+
+If the number of distinct slices is greater than 1,000,000,000, the function should return 1,000,000,000.
+
+For example, given integer M = 6 and array A such that:
+
+```java
+    A[0] = 3
+    A[1] = 4
+    A[2] = 5
+    A[3] = 5
+    A[4] = 2
+```
+
+the function should return 9, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+- N is an integer within the range [1..100,000];
+- M is an integer within the range [0..100,000];
+- each element of array A is an integer within the range [0..M].
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Count Triangles](./src/main/java/com/codility/lessons/CaterpillarMethod/CountTriangles.java)
 
+An array A consisting of N integers is given. A triplet (P, Q, R) is triangular if it is possible to build a triangle with sides of lengths A[P], A[Q] and A[R]. In other words, triplet (P, Q, R) is triangular if 0 ≤ P < Q < R < N and:
+
+- A[P] + A[Q] > A[R],
+- A[Q] + A[R] > A[P],
+- A[R] + A[P] > A[Q].
+
+For example, consider array A such that:
+
+```java
+  A[0] = 10    A[1] = 2    A[2] = 5
+  A[3] = 1     A[4] = 8    A[5] = 12
+```
+
+There are four triangular triplets that can be constructed from elements of this array, namely (0, 2, 4), (0, 2, 5), (0, 4, 5), and (2, 4, 5).
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array A consisting of N integers, returns the number of triangular triplets in this array.
+
+For example, given array A such that:
+
+```java
+  A[0] = 10    A[1] = 2    A[2] = 5
+  A[3] = 1     A[4] = 8    A[5] = 12
+```
+
+the function should return 4, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- N is an integer within the range [0..1,000];
+- each element of array A is an integer within the range [1..1,000,000,000].
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Min Absolute Sum Of Two](./src/main/java/com/codility/lessons/CaterpillarMethod/MinAbsSumOfTwo.java)
+
+Let A be a non-empty array consisting of N integers.
+
+The abs sum of two for a pair of indices (P, Q) is the absolute value |A[P] + A[Q]|, for 0 ≤ P ≤ Q < N.
+
+For example, the following array A:
+
+```java
+  A[0] =  1
+  A[1] =  4
+  A[2] = -3
+```
+
+- has pairs of indices (0, 0), (0, 1), (0, 2), (1, 1), (1, 2), (2, 2).
+- The abs sum of two for the pair (0, 0) is A[0] + A[0] = |1 + 1| = 2.
+- The abs sum of two for the pair (0, 1) is A[0] + A[1] = |1 + 4| = 5.
+- The abs sum of two for the pair (0, 2) is A[0] + A[2] = |1 + (−3)| = 2.
+- The abs sum of two for the pair (1, 1) is A[1] + A[1] = |4 + 4| = 8.
+- The abs sum of two for the pair (1, 2) is A[1] + A[2] = |4 + (−3)| = 1.
+- The abs sum of two for the pair (2, 2) is A[2] + A[2] = |(−3) + (−3)| = 6.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty array A consisting of N integers, returns the minimal abs sum of two for any pair of indices in this array.
+
+For example, given the following array A:
+
+```java
+  A[0] =  1
+  A[1] =  4
+  A[2] = -3
+```
+
+the function should return 1, as explained above.
+
+Given array A:
+
+```java
+  A[0] = -8
+  A[1] =  4
+  A[2] =  5
+  A[3] =-10
+  A[4] =  3
+```
+
+the function should return |(−8) + 5| = 3.
+
+Write an *efficient* algorithm for the following assumptions:
+- N is an integer within the range [1..100,000];
+- each element of array A is an integer within the range [−1,000,000,000..1,000,000,000].
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -2337,9 +2530,112 @@ Complexity:
 
 ##### [Max Nonoverlapping Segments](./src/main/java/com/codility/lessons/GreedyAlgorithms/MaxNonoverlappingSegments.java)
 
+Located on a line are N segments, numbered from 0 to N − 1, whose positions are given in arrays A and B. For each I (0 ≤ I < N) the position of segment I is from A[I] to B[I] (inclusive). The segments are sorted by their ends, which means that B[K] ≤ B[K + 1] for K such that 0 ≤ K < N − 1.
+
+Two segments I and J, such that I ≠ J, are overlapping if they share at least one common point. In other words, A[I] ≤ A[J] ≤ B[I] or A[J] ≤ A[I] ≤ B[J].
+
+We say that the set of segments is non-overlapping if it contains no two overlapping segments. The goal is to find the size of a non-overlapping set containing the maximal number of segments.
+
+For example, consider arrays A, B such that:
+
+```java
+    A[0] = 1    B[0] = 5
+    A[1] = 3    B[1] = 6
+    A[2] = 7    B[2] = 8
+    A[3] = 9    B[3] = 9
+    A[4] = 9    B[4] = 10
+```
+
+The segments are shown in the figure below.
+
+![Max Nonoverlapping Segments Visualization](./images/Lesson_16_GreedyAlgorithms_Max_Nonoverlapping_Segments_Problem_Image_1.png)
+
+The size of a non-overlapping set containing a maximal number of segments is 3. For example, possible sets are {0, 2, 3}, {0, 2, 4}, {1, 2, 3} or {1, 2, 4}. There is no non-overlapping set with four segments.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A, int[] B); }
+```
+
+that, given two arrays A and B consisting of N integers, returns the size of a non-overlapping set containing a maximal number of segments.
+
+For example, given arrays A, B shown above, the function should return 3, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+- N is an integer within the range [0..30,000];
+- each element of arrays A and B is an integer within the range [0..1,000,000,000];
+- A[I] ≤ B[I], for each I (0 ≤ I < N);
+- B[K] ≤ B[K + 1], for each K (0 ≤ K < N − 1).
+
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
+- Elements of input arrays can be modified.
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Tie Ropes](./src/main/java/com/codility/lessons/GreedyAlgorithms/TieRopes.java)
+
+There are N ropes numbered from 0 to N − 1, whose lengths are given in an array A, lying on the floor in a line. For each I (0 ≤ I < N), the length of rope I on the line is A[I].
+
+We say that two ropes I and I + 1 are adjacent. Two adjacent ropes can be tied together with a knot, and the length of the tied rope is the sum of lengths of both ropes. The resulting new rope can then be tied again.
+
+For a given integer K, the goal is to tie the ropes in such a way that the number of ropes whose length is greater than or equal to K is maximal.
+
+For example, consider K = 4 and array A such that:
+
+```java
+    A[0] = 1
+    A[1] = 2
+    A[2] = 3
+    A[3] = 4
+    A[4] = 1
+    A[5] = 1
+    A[6] = 3
+```
+
+The ropes are shown in the figure below.
+
+![Tie Ropes Visualization](./images/Lesson_16_GreedyAlgorithms_Tie_Ropes_Problem_Image_1.png)
+
+We can tie:
+
+rope 1 with rope 2 to produce a rope of length A[1] + A[2] = 5;
+rope 4 with rope 5 with rope 6 to produce a rope of length A[4] + A[5] + A[6] = 5.
+After that, there will be three ropes whose lengths are greater than or equal to K = 4. It is not possible to produce four such ropes.
+
+Write a function:
+
+```java
+class Solution { public int solution(int K, int[] A); }
+```
+
+that, given an integer K and a non-empty array A of N integers, returns the maximum number of ropes of length greater than or equal to K that can be created.
+
+For example, given K = 4 and array A such that:
+
+```java
+    A[0] = 1
+    A[1] = 2
+    A[2] = 3
+    A[3] = 4
+    A[4] = 1
+    A[5] = 1
+    A[6] = 3
+```
+
+the function should return 3, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+- N is an integer within the range [1..100,000];
+- K is an integer within the range [1..1,000,000,000];
+- each element of array A is an integer within the range [1..1,000,000,000].
+
+Complexity:
+- expected worst-case time complexity is O(N);
+- expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
+- Elements of input arrays can be modified.
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
@@ -2349,8 +2645,92 @@ Complexity:
 
 ##### [Number Solitaire](./src/main/java/com/codility/lessons/DynamicProgramming/NumberSolitaire.java)
 
+A game for one player is played on a board consisting of N consecutive squares, numbered from 0 to N − 1. There is a number written on each square. A non-empty array A of N integers contains the numbers written on the squares. Moreover, some squares can be marked during the game.
+
+At the beginning of the game, there is a pebble on square number 0 and this is the only square on the board which is marked. The goal of the game is to move the pebble to square number N − 1.
+
+During each turn we throw a six-sided die, with numbers from 1 to 6 on its faces, and consider the number K, which shows on the upper face after the die comes to rest. Then we move the pebble standing on square number I to square number I + K, providing that square number I + K exists. If square number I + K does not exist, we throw the die again until we obtain a valid move. Finally, we mark square number I + K.
+
+After the game finishes (when the pebble is standing on square number N − 1), we calculate the result. The result of the game is the sum of the numbers written on all marked squares.
+
+For example, given the following array:
+
+```java
+    A[0] = 1
+    A[1] = -2
+    A[2] = 0
+    A[3] = 9
+    A[4] = -1
+    A[5] = -2
+```
+
+one possible game could be as follows:
+
+- the pebble is on square number 0, which is marked;
+- we throw 3; the pebble moves from square number 0 to square number 3; we mark square number 3;
+- we throw 5; the pebble does not move, since there is no square number 8 on the board;
+- we throw 2; the pebble moves to square number 5; we mark this square and the game ends.
+- The marked squares are 0, 3 and 5, so the result of the game is 1 + 9 + (−2) = 8. This is the maximal possible result that can be achieved on this board.
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given a non-empty array A of N integers, returns the maximal result that can be achieved on the board represented by array A.
+
+For example, given the array
+
+```java
+    A[0] = 1
+    A[1] = -2
+    A[2] = 0
+    A[3] = 9
+    A[4] = -1
+    A[5] = -2
+```
+
+the function should return 8, as explained above.
+
+Write an *efficient* algorithm for the following assumptions:
+
+- N is an integer within the range [2..100,000];
+- each element of array A is an integer within the range [−10,000..10,000].
+
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
 ##### [Min Absolute Sum](./src/main/java/com/codility/lessons/DynamicProgramming/MinAbsSum.java)
+
+For a given array A of N integers and a sequence S of N integers from the set {−1, 1}, we define val(A, S) as follows:
+
+val(A, S) = |sum{ A[i]*S[i] for i = 0..N−1 }|
+
+(Assume that the sum of zero elements equals zero.)
+
+For a given array A, we are looking for such a sequence S that minimizes val(A,S).
+
+Write a function:
+
+```java
+class Solution { public int solution(int[] A); }
+```
+
+that, given an array A of N integers, computes the minimum value of val(A,S) from all possible values of val(A,S) for all possible sequences S of N integers from the set {−1, 1}.
+
+For example, given array:
+
+```java
+  A[0] =  1
+  A[1] =  5
+  A[2] =  2
+  A[3] = -2
+```
+
+your function should return 0, since for S = [−1, 1, −1, 1], val(A, S) = 0, which is the minimum possible value.
+
+Write an efficient algorithm for the following assumptions:
+- N is an integer within the range [0..20,000];
+- each element of array A is an integer within the range [−100..100].
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>

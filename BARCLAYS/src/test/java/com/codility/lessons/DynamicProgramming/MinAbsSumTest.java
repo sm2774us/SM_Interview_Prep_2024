@@ -1,4 +1,4 @@
-package com.codility.lessons.CountingElements;
+package com.codility.lessons.DynamicProgramming;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,17 +14,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class MaxCountersTest {
-	private static Logger LOG = LoggerFactory.getLogger(MaxCountersTest.class);
+public class MinAbsSumTest {
 
-	static MaxCounters maxCounters;
+	private static Logger LOG = LoggerFactory.getLogger(MinAbsSumTest.class);
+
+	static MinAbsSum minAbsSum;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		maxCounters = new MaxCounters();
+		minAbsSum = new MinAbsSum();
 	}
 
 	static long start, end;
@@ -47,22 +48,10 @@ public class MaxCountersTest {
 	}
 
 	@Test
-	public void solutionTest_1() {
-		final int[] expected = {3,2,2,4,2};
-		final int N = 5;
-		final int[] A = {3,4,4,6,1,4,4};
-
-		final int[] result = maxCounters.solution1(N, A);
-		assertThat(result).isEqualTo(expected);
+	public void solutionTest() {
+		final int[] A = {1, 5, 2, -2};
+		final int result = minAbsSum.solution(A);
+		assertThat(result).isEqualTo(0);
 	}
 
-	@Test
-	public void solutionTest_2() {
-		final int[] expected = {3,2,2,4,2};
-		final int N = 5;
-		final int[] A = {3,4,4,6,1,4,4};
-
-		final int[] result = maxCounters.solution2(N, A);
-		assertThat(result).isEqualTo(expected);
-	}
 }

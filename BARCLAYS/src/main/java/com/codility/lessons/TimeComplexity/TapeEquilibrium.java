@@ -88,9 +88,6 @@ public class TapeEquilibrium {
 
 		int result2 = tapeEquilibrium.solution2(A);
 		System.out.println("result2--->"+result2);
-
-		int result3 = tapeEquilibrium.solution3(A);
-		System.out.println("result3--->"+result3);
 	}
 
 }

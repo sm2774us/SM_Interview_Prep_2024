@@ -1,4 +1,4 @@
-package com.codility.lessons.CountingElements;
+package com.codility.lessons.CaterpillarMethod;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,17 +14,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class MaxCountersTest {
-	private static Logger LOG = LoggerFactory.getLogger(MaxCountersTest.class);
+public class CountDistinctSlicesTest {
 
-	static MaxCounters maxCounters;
+	private static Logger LOG = LoggerFactory.getLogger(CountDistinctSlicesTest.class);
+
+	static CountDistinctSlices countDistinctSlices;
 
 	@Rule
 	public Timeout globalTimeout = Timeout.seconds(1);
 
 	@BeforeClass
 	public static void setup() {
-		maxCounters = new MaxCounters();
+		countDistinctSlices = new CountDistinctSlices();
 	}
 
 	static long start, end;
@@ -48,21 +49,19 @@ public class MaxCountersTest {
 
 	@Test
 	public void solutionTest_1() {
-		final int[] expected = {3,2,2,4,2};
-		final int N = 5;
-		final int[] A = {3,4,4,6,1,4,4};
-
-		final int[] result = maxCounters.solution1(N, A);
-		assertThat(result).isEqualTo(expected);
+		final int M = 6;
+		final int[] A = {3, 4, 5, 5, 2};
+		final int result = countDistinctSlices.solution1(M, A);
+		assertThat(result).isEqualTo(9);
 	}
-
+	
 	@Test
 	public void solutionTest_2() {
-		final int[] expected = {3,2,2,4,2};
-		final int N = 5;
-		final int[] A = {3,4,4,6,1,4,4};
+		final int M = 6;
+		final int[] A = {3, 4, 5, 5, 2};
+		final int result = countDistinctSlices.solution2(M, A);
+		assertThat(result).isEqualTo(9);
 
-		final int[] result = maxCounters.solution2(N, A);
-		assertThat(result).isEqualTo(expected);
-	}
+    }
+
 }

@@ -20,10 +20,10 @@ public class CyclicRotation {
         };
         int K = 3;
 
-        int[] sol1 = cyclicRotation.(A, K);
+        int[] sol1 = cyclicRotation.solution1(A, K);
         System.out.println("sol1-->" + Arrays.toString(sol1));
 
-        int[] sol2 = cyclicRotation.(A, K);
+        int[] sol2 = cyclicRotation.solution2(A, K);
         System.out.println("sol2-->" + Arrays.toString(sol2));
     }
 

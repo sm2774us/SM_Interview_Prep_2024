@@ -1,6 +1,6 @@
 package com.codility.lessons.PrefixSums;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.After;
 import org.junit.Before;
@@ -54,7 +54,7 @@ public class GenomicRangeQueryTest {
 		final int[] Q = {4, 5, 6};
 		final int[] expected = {2, 4, 1};
 		final int[] result = genomicRangeQuery.solution1(S, P, Q);
-		assertEquals(result, expected);
+		assertThat(result).isEqualTo(expected);
     }
     
 	@Test
@@ -64,6 +64,6 @@ public class GenomicRangeQueryTest {
 		final int[] Q = {4, 5, 6};
 		final int[] expected = {2, 4, 1};
 		final int[] result = genomicRangeQuery.solution2(S, P, Q);
-		assertEquals(result, expected);
+		assertThat(result).isEqualTo(expected);
 	}
 }
