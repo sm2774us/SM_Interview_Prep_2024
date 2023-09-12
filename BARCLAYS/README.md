@@ -2974,7 +2974,7 @@ money is 9855 (Cost of digit 9 + Cost of digit 8 + Cost of digit 5 + Cost of dig
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
 
-##### [Package With Different Things ( Knapsack Problem Variant )](./src/main/java/com/codility/lessons/Barclays2023/PackageWithDifferentThings.java)
+##### [Package With Different Things ( Knapsack Problem Variant )](./src/main/java/com/codility/lessons/Barclays2023/Package.java)
 
 You want to send your friend a package with different things.
 Each thing you put inside the package has such parameters as index number, weight and cost.
