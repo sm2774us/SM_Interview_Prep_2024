@@ -79,7 +79,7 @@
  - 3.2   [Move All Zeros To End Of Array](#move-all-zeros-to-end-of-array)
  - 3.3   [Get Free Candies](#get-free-candies)
  - 3.4   [Largest Number Of Vaccines](#largest-number-of-vaccines)
- - 3.5   [Package With Different Things ( Knapsack Problem Variant )](#package-with-different-things--knapsack-problem-variant)
+ - 3.5   [Package With Different Things ( Knapsack Problem Variant )](#package-with-different-things--knapsack-problem-variant-)
  - 3.6   [Calculate Cost](#calculate-cost)
  - 3.7   [Hurry](#hurry)
 
