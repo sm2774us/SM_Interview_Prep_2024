@@ -77,6 +77,11 @@
 3. [BARCLAYS INTERVIEW QUESTIONS 2023](#barclays-interview-questions-2023)
  - 3.1   [Slope Of A Number](#slope-of-a-number)
  - 3.2   [Move All Zeros To End Of Array](#move-all-zeros-to-end-of-array)
+ - 3.3   [Get Free Candies](#get-free-candies)
+ - 3.4   [Largest Number Of Vaccines](#largest-number-of-vaccines)
+ - 3.5   [Package With Different Things ( Knapsack Problem Variant )](#package-with-different-things--knapsack-problem-variant)
+ - 3.6   [Calculate Cost](#calculate-cost)
+ - 3.7   [Hurry](#hurry)
 
 #### Build Instructions
 
@@ -2831,5 +2836,261 @@ Output : arr[] = {1, 2, 4, 3, 5, 0, 0, 0};
 Input : arr[]  = {1, 2, 0, 0, 0, 3, 6};
 Output : arr[] = {1, 2, 3, 6, 0, 0, 0};
 ```
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Get Free Candies](./src/main/java/com/codility/lessons/Barclays2023/GetFreeCandies.java)
+
+In a candy store, there are N different types of candies available and the prices of all the N different types of candies are provided to you.
+You are now provided with an attractive offer.
+For every candy you buy from the store and get at most K other candies ( all are different types ) for free.
+Now you have to answer two questions. Firstly, you have to find what is the minimum amount of money you have to spend to buy all the N different candies. Secondly, you have to find what is the maximum amount of money you have to spend to buy all the N different candies.
+In both the cases you must utilize the offer i.e. you buy one candy and get K other candies for free.
+
+*Example 1:*
+
+```
+Input:
+N = 4
+K = 2
+candies[] = {3 2 1 4}
+
+Output:
+3 7
+```
+
+Explanation:
+As according to the offer if you buy 
+one candy you can take at most two 
+more for free. So in the first case, 
+you buy the candy which costs 1 and 
+takes candies worth 3 and 4 for free, 
+also you buy candy worth 2 as well.
+So min cost : 1+2 =3.
+In the second case, you can buy the 
+candy which costs 4 and takes candies 
+worth 1 and 2 for free, also you need 
+to buy candy worth 3 as well. 
+So max cost : 3+4 =7.
+
+*Example 2:*
+
+```
+Input: 
+N = 5
+K = 4
+candies[] = {3 2 1 4 5}
+
+Output: 
+1 5
+```
+
+*Explanation:*
+
+For minimimum cost buy the candy with
+the cost 1 and get all the other candies
+for free.
+For maximum cost buy the candy with
+the cost 5 and get all other candies
+for free.
+
+*Your Task:*
+
+You don't need to read input or print anything. Your task is to complete the function candyStore() which takes the array candies[], its size N and an integer K as input parameters and returns the minimum amount and maximum amount of money to buy all candies according to the offer.
+
+- Expected Time Complexity: O(NLogN)
+- Expected Auxiliary Space: O(1)
+
+Constraints:
+- 1 <= N <= 100000
+- 0 <= K <= N-1
+- 1 <= candies[i] <= 10000
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Largest Number Of Vaccines](./src/main/java/com/codility/lessons/Barclays2023/LargestNumberOfVaccines.java)
+
+THE LARGEST NUMBER OF VACCINES
+
+A disease has spread in your country that does not have
+any vaccines. The health department of your country is
+working to create its vaccine. The limitation to create
+vaccines is the cost that is required to create an effective
+vaccine.
+
+The scientists of the department have created 9 samples
+that are numbered from 1 to 9. Each vaccine is
+associated with a cost. The cost is denoted by an array X
+where Xi denotes the cost of ith sample. The health dept
+has been assigned N units of money to spend. This
+amount of money must be used to create stocks of
+vaccines that can be distributed among different
+hospitals that are situated at different locations in your country.
+
+You are required to find the largest number of stocks
+possible that can be formed by using the N units of
+money, if it is not possible to form such a stock of vaccines, then print -1.
+
+Constraints:
+
+```
+1 <= T <= 10^3
+1 <= N <= 10^4
+1 <= Xi <= 10^3
+```
+
+input:
+
+```
+4
+5
+9 4 2 2 6 3 2 2 1
+2
+5 11 2 2 5 8 9 10 19
+5
+9 9 9 9 9 9 9 9 9 9
+32
+7 8 9 8 7 9 8 8 10
+```
+
+output
+
+```
+99999
+4
+-1
+9855
+```
+
+Explanation for 4th input and output
+- Cost of using digit 1 is 7
+- Cost of using digit 2 is 8
+- Cost of using digit 3 is 9 ....
+- Cost of using digit 9 is 10
+
+Maximum number that we can make using 32 units of
+
+money is 9855 (Cost of digit 9 + Cost of digit 8 + Cost of digit 5 + Cost of digit 5) = (10 + 8 + 7 + 7) = 32
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Package With Different Things ( Knapsack Problem Variant )](./src/main/java/com/codility/lessons/Barclays2023/PackageWithDifferentThings.java)
+
+You want to send your friend a package with different things.
+Each thing you put inside the package has such parameters as index number, weight and cost.
+The package has a weight limit.
+Your goal is to determine which things to put into the package so that the total weight is less than or equal to the package limit and the total cost is as large as possible.
+
+You would prefer to send a package which weights less in case there is more than one package with the same price.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. The input file contains several lines. Each line is one test case.
+
+Each line contains the weight that the package can take (before the colon) and the list of things you need to choose. Each thing is enclosed in parentheses where the 1st number is a thing’s index number, the 2nd is its weight and the 3rd is its cost. Eg:
+
+```
+81 : (1,53.38,$45) (2,88.62,$98) (3,78.48,$3) (4,72.30,$76) (5,30.18,$9) (6,46.34,$48)
+8 : (1,15.3,$34)
+75 : (1,85.31,$29) (2,14.55,$74) (3,3.98,$16) (4,26.24,$55) (5,63.69,$52) (6,76.25,$75) (7,60.02,$74) (8,93.18,$35) (9,89.95,$78)
+56 : (1,90.72,$13) (2,33.80,$40) (3,43.15,$10) (4,37.97,$16) (5,46.81,$36) (6,48.77,$79) (7,81.80,$45) (8,19.36,$79) (9,6.76,$64)
+```
+
+OUTPUT SAMPLE:
+
+```
+For each set of things that you put into the package provide a list (items’ index numbers are separated by comma). E.g. :
+
+4 [ NOTE: The correct answer for the first one is 2 (as $98 > $76 and 88.62 is under 100 ]
+2,7
+8,9
+```
+
+CONSTRAINTS:
+
+- Max weight that a package can take is ≤ 100
+- There might be up to 15 items you need to choose from
+- Max weight and cost of an item is ≤ 100
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Calculate Cost](./src/main/java/com/codility/lessons/Barclays2023/CalculateCost.java)
+
+**Problem:**
+
+You are given the prices of  items. You need to remember all the distinct prices.
+
+The problem is you can remember at most distinct prices.
+
+If there are some prices of the items still left to remember, then you need to pay  for each of the prices.
+
+There are  test cases. For each test case, calculate the cost you need to pay.
+
+  
+Input format:
+
+- First line consists of a number T, number of test cases.
+  - For each test cases, first line consists of a number N, the total number of items.
+- Second line consists of a number , maximum distinct prices you can remember.
+- Third line consists of a number , cost of each price that you were not able to remember.
+- Fourth line consists of  numbers, separated by a space, denoting the prices of  items.
+
+
+Output format:
+
+- Output the cost that you need to pay for the prices that you were not able to remember.
+
+
+Note: Here,  denotes any  item's price out of the given  item prices.
+
+```
+Sample Input
+1
+4
+2
+5
+1 2 3 1
+```
+
+```
+Sample Output
+5
+```
+
+Explanation
+
+For the given test case, there are 3 prices to remember: 1, 2 and 3.
+
+Since you can remember only 2 of them. You need to pay $5 for the one price to remember.
+
+So, the output is 5.
+
+<div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>
+
+##### [Hurry](./src/main/java/com/codility/lessons/Barclays2023/Hurry.java)
+
+Consider a part of the positive number line starting at 0 and ending at 10^9. You start at 0 and there are N tasks can be performed.
+
+The ith task is at l[i] and requires t[i] time to be performed. To perform ith task, you've to reach the point l[i] and spend time t[i] at that location.
+
+It takes one second to travel one unit on the path i.e. going from 1 to 3 will take (3 - 1) = 2 seconds.
+
+You are given T seconds of time, in this time you have to perform as many as tasks you can AND return to the start position. I need to find maximum can be performed in time T.
+
+Example
+
+Consider M = 3, T = 10, and l[] = [1, 2], and t[] = [3, 2].
+
+If we perform the 1st task total time consumed is 1 (to travel) + 3 (to do the task) = 4. The remaining time is 10 - 4 = 6.
+
+Now if we perform the 2nd task consecutively, the total time taken is 1 (to travel from 1) + 2 (to do the task) = 3. The time remaining is 6 - 3 = 3.
+
+Now if we return from 2 to 0. The total time taken is 2. The remaining time is 3 - 2 = 1. Therefore we can safely complete both tasks in a given time. So the answer is 2.
+
+Constrains are high:
+
+- 1 <= N <= 10 ^ 5
+- 0 <= T <= 10 ^ 8
+- 0 <= l[i], t[i] <= 10 ^ 9
 
 <div align="right"><a href="#top" target="_blacnk"><img src="https://img.shields.io/badge/Back to up-orange?style=for-the-badge&logo=expo&logoColor=white" /></a></div>

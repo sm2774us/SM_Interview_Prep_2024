@@ -7,18 +7,18 @@ public class BinaryGap {
 	}
 
     public int solution1(int n) {
-		System.out.println("n--->"+n);
-		System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+		//System.out.println("n--->"+n);
+		//System.out.println("n in Binary--->"+Integer.toBinaryString(n));
 		
 		int maxGap = 0, currGap = 0;
 		boolean isInGap = false;
 		
 		while(n > 0) {
-			System.out.println("n--->"+n);
-			System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+			//System.out.println("n--->"+n);
+			//System.out.println("n in Binary--->"+Integer.toBinaryString(n));
 			if (isOne(n)) {
-				System.out.println("n--->"+n);
-				System.out.println("n in Binary--->"+Integer.toBinaryString(n));
+				//System.out.println("n--->"+n);
+				//System.out.println("n in Binary--->"+Integer.toBinaryString(n));
 				maxGap = maxGap < currGap ? currGap : maxGap;
 				currGap = 0;
 				isInGap = true;
@@ -38,7 +38,7 @@ public class BinaryGap {
 	    while (n != 0 && (n & 1) == 0) {
 	        n >>>= 1;
 	    }
-	    System.out.println("n--->"+n);
+	    //System.out.println("n--->"+n);
 	    
 	    int max = 0;
 	    int gap = 0;
